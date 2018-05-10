@@ -1,7 +1,6 @@
 package com.scirev.blocks.container.functional.tileentity;
 
 import com.scirev.blocks.container.functional.LatheManipulatePanel;
-import com.scirev.electrical.ElectricNetwork;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -113,7 +112,7 @@ public class LatheManipulatePanelEntity extends ElectricStorageEntity implements
 				LatheManipulatePanel.checkMuiltBlock(worldObj, xCoord, yCoord, zCoord);
 				checkMuiltBlock = true;
 			}
-			if (ElectricNetwork.getInstance().getPower(this) > 0 && bottomShell != null && powerSource != null) {
+			if (power > 0 && bottomShell != null && powerSource != null) {
 
 			}
 		}

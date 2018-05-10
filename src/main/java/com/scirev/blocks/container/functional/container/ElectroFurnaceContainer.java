@@ -3,7 +3,6 @@ package com.scirev.blocks.container.functional.container;
 import java.util.Iterator;
 
 import com.scirev.blocks.container.functional.tileentity.ElectroFurnaceEntity;
-import com.scirev.electrical.ElectricNetwork;
 import com.scirev.recipe.BlastFurnaceRecipe;
 
 import cpw.mods.fml.relauncher.Side;
@@ -19,6 +18,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 public class ElectroFurnaceContainer extends Container {
 
+	private int lastPower = 0;
 	private int lastMaxPower = 0;
 	private int lastProgress = 0;
 
@@ -49,7 +49,7 @@ public class ElectroFurnaceContainer extends Container {
 	public void addCraftingToCrafters(ICrafting par1iCrafting) {
 		// TODO Auto-generated method stub
 		super.addCraftingToCrafters(par1iCrafting);
-		par1iCrafting.sendProgressBarUpdate(this, 0, ElectricNetwork.getInstance().getPower(tile));
+		par1iCrafting.sendProgressBarUpdate(this, 0, this.tile.power);
 		par1iCrafting.sendProgressBarUpdate(this, 1, this.tile.maxpower);
 		par1iCrafting.sendProgressBarUpdate(this, 2, this.tile.progress);
 	}
@@ -119,6 +119,9 @@ public class ElectroFurnaceContainer extends Container {
 
 	@SideOnly(Side.CLIENT)
 	public void updateProgressBar(int par1, int par2) {
+		if (par1 == 0) {
+			this.tile.power = par2;
+		}
 		if (par1 == 1) {
 			this.tile.maxpower = par2;
 		}
@@ -134,7 +137,9 @@ public class ElectroFurnaceContainer extends Container {
 		Iterator var1 = this.crafters.iterator();
 		while (var1.hasNext()) {
 			ICrafting var2 = (ICrafting) var1.next();
-
+			if (this.lastPower != this.tile.power) {
+				var2.sendProgressBarUpdate(this, 0, this.tile.power);
+			}
 			if (this.lastMaxPower != this.tile.maxpower) {
 				var2.sendProgressBarUpdate(this, 1, this.tile.maxpower);
 			}
@@ -142,6 +147,7 @@ public class ElectroFurnaceContainer extends Container {
 				var2.sendProgressBarUpdate(this, 2, this.tile.progress);
 			}
 		}
+		this.lastPower = this.tile.power;
 		this.lastMaxPower = this.tile.maxpower;
 		this.lastProgress = this.tile.progress;
 	}

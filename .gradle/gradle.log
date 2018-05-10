@@ -335,10 +335,12 @@ java.net.UnknownHostException: files.minecraftforge.net
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
 :sourceMainJava UP-TO-DATE
-:compileJava UP-TO-DATE
+:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
+1 warning
+
 :processResources UP-TO-DATE
-:classes UP-TO-DATE
-:jar UP-TO-DATE
+:classes
+:jar
 :getVersionJsons3.amazonaws.com
 
 :extractUserDev UP-TO-DATE
@@ -350,38 +352,40 @@ java.net.UnknownHostException: files.minecraftforge.net
 [ant:javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
 [ant:javac] 1 warning
 :runClient
-[20:51:02] [main/INFO] [GradleStart]: Extra: []
-[20:51:02] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Administrator/.gradle/caches/minecraft/assets, --assetIndex, 1.7.10, --accessToken, {REDACTED}, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[20:51:02] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
-[20:51:02] [main/INFO] [FML]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
-[20:51:02] [main/INFO] [FML]: Java is Java HotSpot(TM) Client VM, version 1.8.0_131, running on Windows 10:x86:10.0, installed at C:\Program Files\Java\jdk1.8.0_131\jre
-[20:51:02] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[20:51:02] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[20:51:02] [main/INFO] [GradleStart]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
-[20:51:02] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[20:51:02] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:51:02] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
-[20:51:03] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[20:51:04] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[20:51:04] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
-[20:51:04] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
-[20:51:05] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[20:51:05] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
-[20:51:05] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
-[20:51:05] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[20:51:05] [main/INFO]: Setting user: Player448
-[20:51:07] [Client thread/INFO]: LWJGL Version: 2.9.1
-[20:51:08] [Client thread/INFO] [STDOUT]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
-// Don't be sad, have a hug! <3
+[23:13:14] [main/INFO] [GradleStart]: Extra: []
+[23:13:15] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Administrator/.gradle/caches/minecraft/assets, --assetIndex, 1.7.10, --accessToken, {REDACTED}, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[23:13:15] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[23:13:15] [main/INFO] [LaunchWrapper]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[23:13:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[23:13:15] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+2018-05-10 23:13:16,036 ERROR Unable to rename file E:\eclipse-workspace\minecraft\forge\eclipse\logs\fml-client-2.log to E:\eclipse-workspace\minecraft\forge\eclipse\logs\fml-client-1.log - logs\fml-client-2.log (The system cannot find the file specified)
+2018-05-10 23:13:16,052 ERROR Unable to rename file E:\eclipse-workspace\minecraft\forge\eclipse\logs\fml-client-3.log to E:\eclipse-workspace\minecraft\forge\eclipse\logs\fml-client-2.log - logs\fml-client-3.log (The system cannot find the file specified)
+[23:13:16] [main/INFO] [FML]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
+[23:13:16] [main/INFO] [FML]: Java is Java HotSpot(TM) Client VM, version 1.8.0_131, running on Windows 10:x86:10.0, installed at C:\Program Files\Java\jdk1.8.0_131\jre
+[23:13:16] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[23:13:16] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[23:13:16] [main/INFO] [GradleStart]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
+[23:13:16] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[23:13:16] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:13:16] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[23:13:16] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[23:13:16] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:13:16] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:13:16] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[23:13:16] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[23:13:18] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[23:13:18] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[23:13:18] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[23:13:19] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[23:13:19] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
+[23:13:19] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
+[23:13:19] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[23:13:22] [main/INFO]: Setting user: Player712
+[23:13:26] [Client thread/INFO]: LWJGL Version: 2.9.1
+[23:13:30] [Client thread/INFO] [STDOUT]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
 
-Time: 5/10/18 8:51 PM
+Time: 5/10/18 11:13 PM
 Description: Loading screen debug info
 
 This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
@@ -395,128 +399,204 @@ Details:
 	Minecraft Version: 1.7.10
 	Operating System: Windows 10 (x86) version 10.0
 	Java Version: 1.8.0_131, Oracle Corporation
-	Java VM Version: Java HotSpot(TM) Client VM (mixed mode, sharing), Oracle Corporation
-	Memory: 13088856 bytes (12 MB) / 47697920 bytes (45 MB) up to 259522560 bytes (247 MB)
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 12862896 bytes (12 MB) / 47697920 bytes (45 MB) up to 259522560 bytes (247 MB)
 	JVM Flags: 0 total; 
 	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	GL info: ' Vendor: 'Intel' Version: '4.0.0 - Build 10.18.10.4491' Renderer: 'Intel(R) HD Graphics 4000'
-[20:51:08] [Client thread/INFO] [MinecraftForge]: Attempting early MinecraftForge initialization
-[20:51:08] [Client thread/INFO] [FML]: MinecraftForge v10.13.4.1614 Initialized
-[20:51:08] [Client thread/INFO] [FML]: Replaced 183 ore recipies
-[20:51:08] [Client thread/INFO] [MinecraftForge]: Completed early MinecraftForge initialization
-[20:51:08] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
-[20:51:08] [Client thread/INFO] [FML]: Searching E:\eclipse-workspace\minecraft\forge\eclipse\mods for mods
-[20:51:18] [Client thread/INFO] [FML]: Forge Mod Loader has identified 4 mods to load
-[20:51:18] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, scirev] at CLIENT
-[20:51:18] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, scirev] at SERVER
-[20:51:19] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
-[20:51:19] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
-[20:51:19] [Client thread/INFO] [FML]: Found 341 ObjectHolder annotations
-[20:51:19] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
-[20:51:19] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
-[20:51:19] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
-[20:51:19] [Client thread/INFO] [FML]: Applying holder lookups
-[20:51:19] [Client thread/INFO] [FML]: Holder lookups applied
-[20:51:19] [Client thread/INFO] [FML]: Injecting itemstacks
-[20:51:19] [Client thread/INFO] [FML]: Itemstack injection complete
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: java.net.UnknownHostException: files.minecraftforge.net
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.Socket.connect(Socket.java:589)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.Socket.connect(Socket.java:538)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1022)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1020)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivileged(Native Method)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1019)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.access$200(HttpURLConnection.java:91)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1466)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1464)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivileged(Native Method)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1463)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.URL.openStream(URL.java:1045)
-[20:51:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at net.minecraftforge.common.ForgeVersion$1.run(ForgeVersion.java:90)
-[20:51:19] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:19] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
-[20:51:19] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
-[20:51:19] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[20:51:19] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
-[20:51:19] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:19] [Sound Library Loader/INFO]: Sound engine started
-[20:51:33] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[20:51:33] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[20:51:33] [Client thread/INFO] [FML]: Injecting itemstacks
-[20:51:33] [Client thread/INFO] [FML]: Itemstack injection complete
-[20:51:33] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 4 mods
-[20:51:33] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
-[20:51:34] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[20:51:34] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[20:51:34] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:34] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
-[20:51:35] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
-[20:51:35] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:35] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:35] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
-[20:51:35] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
-[20:51:35] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[20:51:35] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
-[20:51:35] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:51:35] [Sound Library Loader/INFO]: Sound engine started
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: The following texture errors were found.
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:   DOMAIN minecraft
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: --------------------------------------------------
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:   domain minecraft is missing 4 textures
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:     domain minecraft has 4 locations:
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       unknown resourcepack type net.minecraft.client.resources.DefaultResourcePack : Default
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       mod FML resources at C:\Users\Administrator\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       mod Forge resources at C:\Users\Administrator\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       mod scirev resources at E:\eclipse-workspace\minecraft\forge\build\libs\modid-1.0.jar
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:     The missing resources for domain minecraft are:
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_187_Cable.png
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_184_LatheBottomShell.png
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_186_LathePowerSource.png
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_185_LatheManipulatePanel.png
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]:     No other errors exist for domain minecraft
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
-[20:51:46] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-[20:51:59] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[20:51:59] [Server thread/INFO]: Generating keypair
-[20:51:59] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
-[20:51:59] [Server thread/INFO] [FML]: Applying holder lookups
-[20:51:59] [Server thread/INFO] [FML]: Holder lookups applied
-[20:51:59] [Server thread/INFO] [FML]: Loading dimension 0 (Test) (net.minecraft.server.integrated.IntegratedServer@6ca9eb)
-[20:52:00] [Server thread/INFO] [FML]: Loading dimension 1 (Test) (net.minecraft.server.integrated.IntegratedServer@6ca9eb)
-[20:52:00] [Server thread/INFO] [FML]: Loading dimension -1 (Test) (net.minecraft.server.integrated.IntegratedServer@6ca9eb)
-[20:52:00] [Server thread/INFO]: Preparing start region for level 0
-[20:52:00] [Server thread/INFO]: Changing view distance to 8, from 10
-[20:52:01] [Netty Client IO #0/INFO] [FML]: Server protocol version 2
-[20:52:01] [Netty IO #1/INFO] [FML]: Client protocol version 2
-[20:52:01] [Netty IO #1/INFO] [FML]: Client attempting to join with 4 mods : FML@7.10.99.99,Forge@10.13.4.1614,mcp@9.05,scirev@1.0
-[20:52:01] [Netty IO #1/INFO] [FML]: Attempting connection with missing mods [] at CLIENT
-[20:52:01] [Netty Client IO #0/INFO] [FML]: Attempting connection with missing mods [] at SERVER
-[20:52:01] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[20:52:01] [Server thread/INFO]: Player448[local:E:9fa6935d] logged in with entity id 29 at (-283.4065472519034, 5.0, 47.31086717878792)
-[20:52:01] [Client thread/INFO] [FML]: [Client thread] Client side modded connection established
-[20:52:01] [Server thread/INFO]: Player448 加入了游戏
-[20:52:02] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@a585aa[id=e5f3c748-0ea0-3a62-b5e9-4fef46853cc3,name=Player448,properties={},legacy=false]
+[23:13:31] [Client thread/INFO] [MinecraftForge]: Attempting early MinecraftForge initialization
+[23:13:31] [Client thread/INFO] [FML]: MinecraftForge v10.13.4.1614 Initialized
+[23:13:31] [Client thread/INFO] [FML]: Replaced 183 ore recipies
+[23:13:35] [Client thread/INFO] [MinecraftForge]: Completed early MinecraftForge initialization
+[23:13:35] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
+[23:13:35] [Client thread/INFO] [FML]: Searching E:\eclipse-workspace\minecraft\forge\eclipse\mods for mods
+[23:14:15] [Client thread/INFO] [FML]: Forge Mod Loader has identified 4 mods to load
+[23:14:16] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, scirev] at CLIENT
+[23:14:16] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, scirev] at SERVER
+[23:14:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[23:14:18] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
+[23:14:18] [Client thread/INFO] [FML]: Found 341 ObjectHolder annotations
+[23:14:18] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[23:14:18] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[23:14:18] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[23:14:18] [Client thread/INFO] [FML]: Applying holder lookups
+[23:14:18] [Client thread/INFO] [FML]: Holder lookups applied
+[23:14:18] [Client thread/INFO] [FML]: Injecting itemstacks
+[23:14:18] [Client thread/INFO] [FML]: Itemstack injection complete
+[23:14:18] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:18] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[23:14:19] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[23:14:19] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: java.net.UnknownHostException: files.minecraftforge.net
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.Socket.connect(Socket.java:589)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.Socket.connect(Socket.java:538)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1022)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1020)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivileged(Native Method)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1019)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.access$200(HttpURLConnection.java:91)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1466)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1464)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivileged(Native Method)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1463)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at java.net.URL.openStream(URL.java:1045)
+[23:14:19] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:748]: 	at net.minecraftforge.common.ForgeVersion$1.run(ForgeVersion.java:90)
+[23:14:27] [Thread-8/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[23:14:27] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:27] [Sound Library Loader/INFO]: Sound engine started
+[23:14:47] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[23:14:47] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[23:14:47] [Client thread/INFO] [FML]: Injecting itemstacks
+[23:14:47] [Client thread/INFO] [FML]: Itemstack injection complete
+[23:14:47] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 4 mods
+[23:14:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[23:14:48] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[23:14:48] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[23:14:48] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:48] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[23:14:49] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[23:14:49] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:49] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:49] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[23:14:49] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[23:14:49] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[23:14:49] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[23:14:49] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:14:49] [Sound Library Loader/INFO]: Sound engine started
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: The following texture errors were found.
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:   DOMAIN minecraft
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: --------------------------------------------------
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:   domain minecraft is missing 4 textures
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:     domain minecraft has 4 locations:
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       unknown resourcepack type net.minecraft.client.resources.DefaultResourcePack : Default
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       mod FML resources at C:\Users\Administrator\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       mod Forge resources at C:\Users\Administrator\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       mod scirev resources at E:\eclipse-workspace\minecraft\forge\build\libs\modid-1.0.jar
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:     The missing resources for domain minecraft are:
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_187_Cable.png
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_184_LatheBottomShell.png
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_186_LathePowerSource.png
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/blocks/MISSING_ICON_BLOCK_185_LatheManipulatePanel.png
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]:     No other errors exist for domain minecraft
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
+[23:14:51] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[23:15:11] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[23:15:11] [Server thread/INFO]: Generating keypair
+[23:15:12] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
+[23:15:12] [Server thread/INFO] [FML]: Applying holder lookups
+[23:15:12] [Server thread/INFO] [FML]: Holder lookups applied
+[23:15:12] [Server thread/INFO] [FML]: Loading dimension 0 (Test World) (net.minecraft.server.integrated.IntegratedServer@413b37)
+[23:15:12] [Server thread/INFO] [FML]: Loading dimension 1 (Test World) (net.minecraft.server.integrated.IntegratedServer@413b37)
+[23:15:12] [Server thread/INFO] [FML]: Loading dimension -1 (Test World) (net.minecraft.server.integrated.IntegratedServer@413b37)
+[23:15:12] [Server thread/INFO]: Preparing start region for level 0
+[23:15:13] [Server thread/INFO]: Preparing spawn area: 71%
+[23:15:13] [Server thread/INFO]: Changing view distance to 8, from 10
+[23:15:14] [Netty Client IO #0/INFO] [FML]: Server protocol version 2
+[23:15:14] [Netty IO #1/INFO] [FML]: Client protocol version 2
+[23:15:14] [Netty IO #1/INFO] [FML]: Client attempting to join with 4 mods : FML@7.10.99.99,Forge@10.13.4.1614,mcp@9.05,scirev@1.0
+[23:15:14] [Netty IO #1/INFO] [FML]: Attempting connection with missing mods [] at CLIENT
+[23:15:14] [Netty Client IO #0/INFO] [FML]: Attempting connection with missing mods [] at SERVER
+[23:15:14] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[23:15:14] [Client thread/INFO] [FML]: [Client thread] Client side modded connection established
+[23:15:14] [Server thread/INFO]: Player712[local:E:b08545fb] logged in with entity id 86 at (573.2340004645787, 5.0, 344.3539754018797)
+[23:15:14] [Server thread/INFO]: Player712 加入了游戏
+[23:15:16] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathepowersource.png
+java.io.FileNotFoundException: scirev:textures/blocks/lathepowersource.png
+	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
+	at com.scirev.blocks.models.tileentity.RenderLPS.renderTileEntityAt(RenderLPS.java:31) [RenderLPS.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
+	at GradleStart.main(Unknown Source) [start/:?]
+[23:15:16] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathebottomshell.png
+java.io.FileNotFoundException: scirev:textures/blocks/lathebottomshell.png
+	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
+	at com.scirev.blocks.models.tileentity.RenderLBS.renderTileEntityAt(RenderLBS.java:31) [RenderLBS.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
+	at GradleStart.main(Unknown Source) [start/:?]
+[23:15:16] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathemanipulatepanel.png
+java.io.FileNotFoundException: scirev:textures/blocks/lathemanipulatepanel.png
+	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
+	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
+	at com.scirev.blocks.models.tileentity.RenderLMP.renderTileEntityAt(RenderLMP.java:31) [RenderLMP.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
+	at GradleStart.main(Unknown Source) [start/:?]
+[23:15:17] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@7652f[id=e4358028-bc3b-38cc-b645-4d08d3b4f456,name=Player712,properties={},legacy=false]
 com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:71) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:158) [YggdrasilMinecraftSessionService.class:?]
@@ -567,377 +647,679 @@ Caused by: java.net.UnknownHostException: sessionserver.mojang.com
 	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:126) ~[HttpAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:54) ~[YggdrasilAuthenticationService.class:?]
 	... 18 more
-[20:52:02] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathebottomshell.png
-java.io.FileNotFoundException: scirev:textures/blocks/lathebottomshell.png
-	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
-	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
-	at com.scirev.blocks.models.tileentity.RenderLBS.renderTileEntityAt(RenderLBS.java:31) [RenderLBS.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
-	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
-	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
-	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
-	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
-	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
-	at GradleStart.main(Unknown Source) [start/:?]
-[20:52:02] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathepowersource.png
-java.io.FileNotFoundException: scirev:textures/blocks/lathepowersource.png
-	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
-	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
-	at com.scirev.blocks.models.tileentity.RenderLPS.renderTileEntityAt(RenderLPS.java:31) [RenderLPS.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
-	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
-	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
-	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
-	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
-	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
-	at GradleStart.main(Unknown Source) [start/:?]
-[20:52:02] [Client thread/WARN]: Failed to load texture: scirev:textures/blocks/lathemanipulatepanel.png
-java.io.FileNotFoundException: scirev:textures/blocks/lathemanipulatepanel.png
-	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
-	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:35) ~[SimpleTexture.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:89) [TextureManager.class:?]
-	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:45) [TextureManager.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer.bindTexture(TileEntitySpecialRenderer.java:25) [TileEntitySpecialRenderer.class:?]
-	at com.scirev.blocks.models.tileentity.RenderLMP.renderTileEntityAt(RenderLMP.java:31) [RenderLMP.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126) [TileEntityRendererDispatcher.class:?]
-	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539) [RenderGlobal.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300) [EntityRenderer.class:?]
-	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) [EntityRenderer.class:?]
-	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) [Minecraft.class:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
-	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_131]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_131]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_131]
-	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
-	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
-	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
-	at GradleStart.main(Unknown Source) [start/:?]
-[20:52:03] [Server thread/INFO]: Saving and pausing game...
-[20:52:03] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[20:52:03] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[20:52:03] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[20:52:07] [Server thread/INFO]: Saving and pausing game...
-[20:52:07] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[20:52:07] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[20:52:07] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[20:52:08] [Server thread/INFO]: Stopping server
-[20:52:08] [Server thread/INFO]: Saving players
-[20:52:08] [Server thread/INFO]: Saving worlds
-[20:52:08] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[20:52:08] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[20:52:08] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[20:52:08] [Server thread/INFO] [FML]: Unloading dimension 0
-[20:52:08] [Server thread/INFO] [FML]: Unloading dimension -1
-[20:52:08] [Server thread/INFO] [FML]: Unloading dimension 1
-[20:52:08] [Server thread/INFO] [FML]: Applying holder lookups
-[20:52:08] [Server thread/INFO] [FML]: Holder lookups applied
-[20:52:10] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[20:52:10] [Server thread/INFO]: Generating keypair
-[20:52:10] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
-[20:52:10] [Server thread/INFO] [FML]: Applying holder lookups
-[20:52:10] [Server thread/INFO] [FML]: Holder lookups applied
-[20:52:10] [Server thread/INFO] [FML]: Loading dimension 0 (Test World) (net.minecraft.server.integrated.IntegratedServer@4fdf50)
-[20:52:10] [Server thread/INFO] [FML]: Loading dimension 1 (Test World) (net.minecraft.server.integrated.IntegratedServer@4fdf50)
-[20:52:10] [Server thread/INFO] [FML]: Loading dimension -1 (Test World) (net.minecraft.server.integrated.IntegratedServer@4fdf50)
-[20:52:10] [Server thread/INFO]: Preparing start region for level 0
-[20:52:11] [Server thread/INFO]: Changing view distance to 8, from 10
-[20:52:11] [Netty Client IO #1/INFO] [FML]: Server protocol version 2
-[20:52:11] [Netty IO #3/INFO] [FML]: Client protocol version 2
-[20:52:11] [Netty IO #3/INFO] [FML]: Client attempting to join with 4 mods : FML@7.10.99.99,Forge@10.13.4.1614,mcp@9.05,scirev@1.0
-[20:52:11] [Netty IO #3/INFO] [FML]: Attempting connection with missing mods [] at CLIENT
-[20:52:11] [Netty Client IO #1/INFO] [FML]: Attempting connection with missing mods [] at SERVER
-[20:52:11] [Client thread/INFO] [FML]: [Client thread] Client side modded connection established
-[20:52:11] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[20:52:11] [Server thread/INFO]: Player448[local:E:0167d564] logged in with entity id 266 at (569.9337206997983, 4.0, 340.779392637216)
-[20:52:11] [Server thread/INFO]: Player448 加入了游戏
+0
+10
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:10
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+0
+-14
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:4
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:6
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:519
+0
+10
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:14
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:-16
+[23:15:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:10,tE:517
+0
+-14
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:10
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:525
+0
+10
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:24
+[23:15:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:10
+[23:16:12] [Server thread/INFO]: Saving and pausing game...
+[23:16:12] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[23:16:12] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[23:16:12] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[23:16:13] [Server thread/INFO]: Stopping server
+[23:16:13] [Server thread/INFO]: Saving players
+[23:16:13] [Server thread/INFO]: Saving worlds
+[23:16:13] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[23:16:13] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[23:16:13] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[23:16:13] [Server thread/INFO] [FML]: Unloading dimension 0
+[23:16:13] [Server thread/INFO] [FML]: Unloading dimension -1
+[23:16:13] [Server thread/INFO] [FML]: Unloading dimension 1
+[23:16:13] [Server thread/INFO] [FML]: Applying holder lookups
+[23:16:13] [Server thread/INFO] [FML]: Holder lookups applied
+[23:16:15] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[23:16:15] [Server thread/INFO]: Generating keypair
+[23:16:15] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
+[23:16:15] [Server thread/INFO] [FML]: Applying holder lookups
+[23:16:15] [Server thread/INFO] [FML]: Holder lookups applied
+[23:16:15] [Server thread/INFO] [FML]: Loading dimension 0 (Test) (net.minecraft.server.integrated.IntegratedServer@1f8a875)
+[23:16:15] [Server thread/INFO] [FML]: Loading dimension 1 (Test) (net.minecraft.server.integrated.IntegratedServer@1f8a875)
+[23:16:15] [Server thread/INFO] [FML]: Loading dimension -1 (Test) (net.minecraft.server.integrated.IntegratedServer@1f8a875)
+[23:16:15] [Server thread/INFO]: Preparing start region for level 0
+[23:16:16] [Server thread/INFO]: Changing view distance to 8, from 10
+[23:16:16] [Netty Client IO #1/INFO] [FML]: Server protocol version 2
+[23:16:16] [Netty IO #3/INFO] [FML]: Client protocol version 2
+[23:16:16] [Netty IO #3/INFO] [FML]: Client attempting to join with 4 mods : FML@7.10.99.99,Forge@10.13.4.1614,mcp@9.05,scirev@1.0
+[23:16:16] [Netty IO #3/INFO] [FML]: Attempting connection with missing mods [] at CLIENT
+[23:16:16] [Netty Client IO #1/INFO] [FML]: Attempting connection with missing mods [] at SERVER
+[23:16:16] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[23:16:16] [Server thread/INFO]: Player712[local:E:0f4e75d1] logged in with entity id 629 at (-283.63499357412024, 5.0, 46.87554648154397)
+[23:16:16] [Server thread/INFO]: Player712 加入了游戏
+[23:16:16] [Client thread/INFO] [FML]: [Client thread] Client side modded connection established
+0
+-12
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+0
+-4
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:20
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:20
+0
+20
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:28
+[23:16:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:28
+0
+44
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:52
+0
+44
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:52
+0
+46
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
+0
+0
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:-8
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:-4
+0
+0
+0
+0
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:-8
+[23:16:45] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+0
+0
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:-8
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+0
+0
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:8
+[23:16:46] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+-4
+[23:16:47] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:47] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:47] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:20
+[23:16:47] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:20
+0
+20
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:28
+0
+60
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:34
+0
+60
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:48] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:34
+0
+60
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:34
+0
+60
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:36
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:28
+0
+32
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:49] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
+0
+30
+0
+40
+0
+28
+0
+44
+0
+44
+0
+44
+0
+44
+0
+44
+0
+52
+[23:16:57] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:57] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
+0
+36
+0
+36
+0
+52
+[23:16:57] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:57] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
+0
+52
+[23:16:58] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:58] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
+0
+36
+0
+44
+[23:16:58] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:58] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:52
+0
+0
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:8
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+8
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:16:59] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:17:00] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:17:00] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:17:00] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:-8
+[23:17:00] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:12
+[23:17:53] [Server thread/INFO]: Saving and pausing game...
+[23:17:53] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
+[23:17:53] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
+[23:17:53] [Server thread/INFO]: Saving chunks for level 'Test'/The End
+0
 -16
 0
-[20:52:16] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:16] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:16] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-18
-[20:52:16] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:8
-[20:52:16] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:513
 0
 0
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-4
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:6
-0
-0
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-10
-[20:52:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:32
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:53
 -16
 0
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-6
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:20
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:521
 0
 0
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:20
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:30
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:17] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:45
+-16
 0
 0
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-2
-[20:52:19] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:24
-24
-18
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
-18
-12
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:32,tE:16
-6
-6
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:16
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
+0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:37
+0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:18] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
 0
 16
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:32,tE:16
--16
--16
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:8
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:2
--16
--16
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-4
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:6
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:521
--16
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
 0
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:6
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-16
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:519
--16
--16
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
-[20:52:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:10
--16
--16
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:10
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:4
--16
+16
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:18
+[23:18:20] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
 0
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-12
-[20:52:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:14
--16
--16
-[20:52:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:6
-[20:52:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
+38
 0
+32
+[23:18:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
 0
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-6
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:20
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:521
--16
--16
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:4
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:14
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:519
--16
--16
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-2
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:8
--16
--16
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-8
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:2
--16
--16
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-14
-[20:52:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-4
--16
+32
+[23:18:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:21] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
 0
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-10
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-16
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:521
--16
--16
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:0
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-6
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:519
--16
--16
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-6
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-12
--16
--16
+36
+0
+36
+0
+40
+[23:18:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:22] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+16
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:22
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+16
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:36
+0
+16
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:20
+[23:18:23] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+16
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:34
+0
+16
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:18
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:24] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+[23:18:25] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:25] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
 0
 0
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-18
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:8
-[20:52:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:510
-[20:53:32] [Server thread/INFO]: [Player448: 将时间设为 1000]
-[20:53:32] [Client thread/INFO]: [CHAT] 将时间设为 1000
-[20:53:34] [Server thread/INFO]: Player448 刚刚获得了 [打开物品栏] 成就！
-[20:53:34] [Client thread/INFO]: [CHAT] Player448 刚刚获得了 [打开物品栏] 成就！
-2
-6
-[20:54:10] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:10] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:32,tE:32
-20
-14
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:4
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:44
-6
+[23:18:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:26] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:60
 0
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:24
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:28
--8
--4
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:18
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:12
-10
--6
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:32,tE:38
-18
-12
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:0
-[20:54:11] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:38
-4
--2
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:20
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:38
-22
-22
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-12
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:24
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:8
-22
-22
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:-16
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:16
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:10,tE:16
--4
-6
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:12] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:32,tE:26
--22
--22
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-6
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:8
-8
--8
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:53]: added 1 component
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:6
-[20:54:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:66]: Power flow:16,tE:-12
-[20:54:27] [Server thread/INFO]: Saving and pausing game...
-[20:54:27] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
-[20:54:27] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
-[20:54:27] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
-[20:54:28] [Server thread/INFO]: Stopping server
-[20:54:28] [Server thread/INFO]: Saving players
-[20:54:28] [Server thread/INFO]: Saving worlds
-[20:54:28] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
-[20:54:28] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
-[20:54:28] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
-[20:54:28] [Server thread/INFO] [FML]: Unloading dimension 0
-[20:54:28] [Server thread/INFO] [FML]: Unloading dimension -1
-[20:54:28] [Server thread/INFO] [FML]: Unloading dimension 1
-[20:54:28] [Server thread/INFO] [FML]: Applying holder lookups
-[20:54:28] [Server thread/INFO] [FML]: Holder lookups applied
-[20:54:28] [Client thread/INFO]: Stopping!
-[20:54:28] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[20:54:28] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
-[20:54:29] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
-[20:54:29] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+0
+[23:18:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+32
+0
+0
+[23:18:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:27] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:46
+0
+32
+0
+32
+0
+0
+[23:18:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:28] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:44
+0
+32
+0
+48
+0
+48
+[23:18:29] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:29] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+48
+0
+48
+[23:18:30] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:30] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+48
+0
+32
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+16
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:31] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+16
+[23:18:32] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:32] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:32] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:32] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+16
+[23:18:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:33] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+16
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:34] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+0
+16
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+0
+32
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:35] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+0
+[23:18:36] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:36] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:36] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:36] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+16
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+-16
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+16
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:38] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+-16
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+16
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:39] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:32
+0
+16
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:32
+0
+16
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:40] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:32
+0
+16
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:32
+0
+16
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:32
+[23:18:41] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+0
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:32
+0
+0
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+16
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:42] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+-16
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+16
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+-16
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+[23:18:43] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:16
+0
+0
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+[23:18:44] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:16,tE:0
+0
+32
+[23:19:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:19:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+[23:19:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:19:13] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+48
+0
+32
+[23:19:14] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:19:14] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+32
+[23:19:14] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:50]: added 1 component
+[23:19:14] [Server thread/INFO] [STDOUT]: [com.scirev.blocks.container.functional.tileentity.ElectricStorageEntity:updateEntity:63]: Power flow:32,tE:48
+0
+48
+0
+32
+0
+36
+0
+36
+0
+36
+[23:19:19] [Server thread/INFO]: Saving and pausing game...
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/The End
+[23:19:19] [Server thread/INFO]: Stopping server
+[23:19:19] [Server thread/INFO]: Saving players
+[23:19:19] [Server thread/INFO]: Saving worlds
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
+[23:19:19] [Server thread/INFO]: Saving chunks for level 'Test'/The End
+[23:19:19] [Server thread/INFO] [FML]: Unloading dimension 0
+[23:19:19] [Server thread/INFO] [FML]: Unloading dimension -1
+[23:19:19] [Server thread/INFO] [FML]: Unloading dimension 1
+[23:19:19] [Server thread/INFO] [FML]: Applying holder lookups
+[23:19:19] [Server thread/INFO] [FML]: Holder lookups applied
+[23:19:20] [Client thread/INFO]: Stopping!
+[23:19:20] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[23:19:20] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[23:19:20] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[23:19:20] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
 
 BUILD SUCCESSFUL
 
-Total time: 3 mins 37.44 secs
+Total time: 6 mins 53.174 secs

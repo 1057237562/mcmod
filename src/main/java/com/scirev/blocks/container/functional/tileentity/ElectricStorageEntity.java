@@ -2,11 +2,8 @@ package com.scirev.blocks.container.functional.tileentity;
 
 import java.util.ArrayList;
 
-import com.scirev.electrical.ElectricNetwork;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 
 public class ElectricStorageEntity extends FunctionalEntity {
 
@@ -14,6 +11,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 	public ArrayList<ElectricStorageEntity> connected = new ArrayList<ElectricStorageEntity>();
 	boolean refresh = false;
 
+	public int power;
 	public int maxpower;
 	private int speed;
 	private boolean d = true;
@@ -40,15 +38,14 @@ public class ElectricStorageEntity extends FunctionalEntity {
 		super.updateEntity();
 		if (!worldObj.isRemote) {
 			detectOnLoad();
-			if (ElectricNetwork.getInstance().getPower(this) > 0 && connected.size() > 0) {
+			if (power > 0 && connected.size() > 0) {
 				ArrayList<ElectricStorageEntity> emptyconnection = new ArrayList<ElectricStorageEntity>();
 				for (ElectricStorageEntity component : connected.toArray(new ElectricStorageEntity[0])) {
-					if (ElectricNetwork.getInstance().getPower(component) < component.maxpower) {
+					if (component.power < component.maxpower) {
 						if (component.d) {
 							emptyconnection.add(component);
 						} else {
-							if (ElectricNetwork.getInstance().getPower(component) < ElectricNetwork.getInstance()
-							        .getPower(this)) {
+							if (component.power < power) {
 								if (debug) {
 									System.out.println("added 1 component");
 								}
@@ -65,11 +62,11 @@ public class ElectricStorageEntity extends FunctionalEntity {
 						if (debug) {
 							System.out.println(
 							        "Power flow:" + (speed / emptyconnection.size()) + ",tE:"
-							                + ElectricNetwork.getInstance().getPower(c));
+							                + c.power);
 						}
 					}
 
-					ElectricNetwork.getInstance().removePower(this, speed);
+					power -= speed;
 				}
 				debug = false;
 			}
@@ -138,11 +135,11 @@ public class ElectricStorageEntity extends FunctionalEntity {
 
 	public void addPower(int p) {
 		// TODO Auto-generated method stub
-		ElectricNetwork.getInstance().addPower(this, p);
+		power += p;
 	}
 
 	public int getPower() {
-		return ElectricNetwork.getInstance().getPower(this);
+		return power;
 	}
 
 	@Override
@@ -175,22 +172,14 @@ public class ElectricStorageEntity extends FunctionalEntity {
 		// TODO Auto-generated method stub
 		super.readFromNBT(par1NBTTagCompound);
 		this.d = par1NBTTagCompound.getBoolean("directional");
-		ElectricNetwork.getInstance().loadTileEntity(this, par1NBTTagCompound.getShort("power"));
+		this.power = par1NBTTagCompound.getShort("power");
 	}
 
 	@Override
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound) {
 		// TODO Auto-generated method stub
 		super.writeToNBT(par1NBTTagCompound);
-		par1NBTTagCompound.setShort("power",
-		        (short) ElectricNetwork.getInstance().getPower(this));
+		par1NBTTagCompound.setShort("power", (short) power);
 		par1NBTTagCompound.setBoolean("directional", d);
-	}
-
-	@Override
-	public void onBlockBroke(World world, int x, int y, int z) {
-		// TODO Auto-generated method stub
-		ElectricNetwork.getInstance().removeTileEntity(this);
-		super.onBlockBroke(world, x, y, z);
 	}
 }

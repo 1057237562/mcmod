@@ -1,7 +1,6 @@
 package com.scirev.blocks.container.functional.tileentity;
 
 import com.scirev.blocks.container.functional.Macerator;
-import com.scirev.electrical.ElectricNetwork;
 import com.scirev.recipe.MaceratorCraftingRecipe;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -106,10 +105,10 @@ public class MaceratorTileEntity extends ElectricStorageEntity implements IInven
 	public void updateEntity() {
 		// TODO Auto-generated method stub
 		if (!worldObj.isRemote) {
-			if (ElectricNetwork.getInstance().getPower(this) > 0) {
+			if (power > 0) {
 				if (canProgress()) {
 					progress++;
-					ElectricNetwork.getInstance().removePower(this, 3);
+					power -= 3;
 					if (this.progress == 200) {
 						makingItem();
 						progress = 0;

@@ -15,10 +15,6 @@ public class ElectricNetwork {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static ElectricNetwork getInstance() {
-		return instance;
-	}
-
 	public Map<ChunkCoordinates, Integer> powers = new HashMap<ChunkCoordinates, Integer>();
 
 	public void loadTileEntity(TileEntity te, int power) {

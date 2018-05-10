@@ -3,7 +3,6 @@ package com.scirev.blocks.container.functional.tileentity;
 import java.util.ArrayList;
 
 import com.scirev.blocks.container.functional.Generator;
-import com.scirev.electrical.ElectricNetwork;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -186,7 +185,7 @@ public class GeneratorEntity extends FunctionalEntity implements IInventory {
 			if (power > GenerateSpeed && connected.size() > 0) {
 				ArrayList<ElectricStorageEntity> emptyconnection = new ArrayList<ElectricStorageEntity>();
 				for (ElectricStorageEntity component : connected.toArray(new ElectricStorageEntity[0])) {
-					if (ElectricNetwork.getInstance().getPower(component) < component.maxpower) {
+					if (component.power < component.maxpower) {
 						emptyconnection.add(component);
 					}
 				}

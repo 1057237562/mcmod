@@ -1,7 +1,6 @@
 package com.scirev.blocks.container.functional.tileentity;
 
 import com.scirev.blocks.container.functional.ElectroFurnace;
-import com.scirev.electrical.ElectricNetwork;
 import com.scirev.recipe.BlastFurnaceRecipe;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -108,10 +107,10 @@ public class ElectroFurnaceEntity extends ElectricStorageEntity implements IInve
 	public void updateEntity() {
 		// TODO Auto-generated method stub
 		if (!worldObj.isRemote) {
-			if (ElectricNetwork.getInstance().getPower(this) > 0) {
+			if (power > 0) {
 				if (canProgress()) {
 					progress++;
-					ElectricNetwork.getInstance().removePower(this, 3);
+					power -= 3;
 					if (this.progress == 200) {
 						makingItem();
 						progress = 0;

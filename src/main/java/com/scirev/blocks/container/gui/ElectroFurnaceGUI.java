@@ -4,7 +4,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.scirev.blocks.container.functional.container.ElectroFurnaceContainer;
 import com.scirev.blocks.container.functional.tileentity.ElectroFurnaceEntity;
-import com.scirev.electrical.ElectricNetwork;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -38,7 +37,7 @@ public class ElectroFurnaceGUI extends GuiContainer {
 		int var5 = (this.width - this.xSize) / 2;
 		int var6 = (this.height - this.ySize) / 2;
 		this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
-		int b = ElectricNetwork.getInstance().getPower(tile);
+		int b = tile.power;
 		float maxBurnTime = tile.maxpower * 1.0F;
 		int progress = tile.progress;
 		if (b > 0 && maxBurnTime > 0) {
