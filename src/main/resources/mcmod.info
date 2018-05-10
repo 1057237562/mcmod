@@ -1,0 +1,16 @@
+[
+{
+  "modid": "scirev",
+  "name": "Sci-Revolution",
+  "description": "Build a industrial empire from nothing.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Dynamic illumination (DI)"],
+  "credits": "Support us in (...)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
