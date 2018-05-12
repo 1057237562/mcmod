@@ -7,6 +7,7 @@ public class CopperOre extends Block {
 
 	public CopperOre(Material p_i45394_1_) {
 		super(p_i45394_1_);
+		setHarvestLevel("pickaxe", 1);
 		// TODO Auto-generated constructor stub
 	}
 

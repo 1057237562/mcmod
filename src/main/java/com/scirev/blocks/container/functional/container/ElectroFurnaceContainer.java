@@ -14,7 +14,6 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.tileentity.TileEntityFurnace;
 
 public class ElectroFurnaceContainer extends Container {
 
@@ -72,21 +71,10 @@ public class ElectroFurnaceContainer extends Container {
 					if (!this.mergeItemStack(var5, 0, 1, false)) {
 						return null;
 					}
-				} else if (getSlot(1).getHasStack() && getSlot(1).getStack().getItem().equals(var5.getItem())
-				        && getSlot(1).getStack().stackSize < getSlot(1).getStack().getMaxStackSize()) {
-					if (!this.mergeItemStack(var5, 1, 2, false)) {
-						return null;
-					}
-				} else if (getSlot(2).getHasStack() && getSlot(2).getStack().getItem().equals(var5.getItem())
+				}else if (getSlot(2).getHasStack() && getSlot(2).getStack().getItem().equals(var5.getItem())
 				        && getSlot(2).getStack().stackSize < getSlot(2).getStack().getMaxStackSize()) {
 					if (!this.mergeItemStack(var5, 2, 3, false)) {
 						return null;
-					}
-				} else if (!getSlot(1).getHasStack()) {
-					if (TileEntityFurnace.isItemFuel(var5)) {
-						if (!this.mergeItemStack(var5, 1, 2, false)) {
-							return null;
-						}
 					}
 				} else if (!getSlot(2).getHasStack()) {
 					if (BlastFurnaceRecipe.isRecipeItem(var5.getItem(), 1)) {

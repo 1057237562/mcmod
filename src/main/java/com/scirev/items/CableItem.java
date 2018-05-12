@@ -1,5 +1,7 @@
 package com.scirev.items;
 
+import com.scirev.blocks.container.functional.Cable;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -71,6 +73,7 @@ public class CableItem extends Item {
 			world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 			world.getBlock(x, y, z).createTileEntity(world, meta);
 			world.getBlock(x, y, z).onPostBlockPlaced(world, x, y, z, side);
+			((Cable) world.getBlock(x, y, z)).meta = meta;
 			return true;
 		}
 

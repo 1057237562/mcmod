@@ -1,6 +1,9 @@
 package com.scirev.blocks.container.functional.tileentity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -8,7 +11,7 @@ import net.minecraft.tileentity.TileEntity;
 public class ElectricStorageEntity extends FunctionalEntity {
 
 	public static String[] material = { "", "aluminum", "copper" };
-	public ArrayList<ElectricStorageEntity> connected = new ArrayList<ElectricStorageEntity>();
+	public Map<ElectricStorageEntity, Boolean> connected = new HashMap<ElectricStorageEntity, Boolean>();
 	boolean refresh = false;
 
 	public int power;
@@ -40,32 +43,25 @@ public class ElectricStorageEntity extends FunctionalEntity {
 			detectOnLoad();
 			if (power > 0 && connected.size() > 0) {
 				ArrayList<ElectricStorageEntity> emptyconnection = new ArrayList<ElectricStorageEntity>();
-				for (ElectricStorageEntity component : connected.toArray(new ElectricStorageEntity[0])) {
+				Set<ElectricStorageEntity> set = connected.keySet();
+				for (ElectricStorageEntity component : set) {
 					if (component.power < component.maxpower) {
 						if (component.d) {
 							emptyconnection.add(component);
 						} else {
-							if (component.power < power) {
-								if (debug) {
-									System.out.println("added 1 component");
-								}
+							if (component.power < power && !connected.get(component)) {
 								emptyconnection.add(component);
+								component.connected.put(this, true);
 							}
 						}
-
+						connected.put(component, false);
 					}
 				}
 
 				if (emptyconnection.size() > 0) {
 					for (ElectricStorageEntity c : emptyconnection.toArray(new ElectricStorageEntity[0])) {
 						c.addPower(speed / emptyconnection.size());
-						if (debug) {
-							System.out.println(
-							        "Power flow:" + (speed / emptyconnection.size()) + ",tE:"
-							                + c.power);
-						}
 					}
-
 					power -= speed;
 				}
 				debug = false;
@@ -79,7 +75,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord + 1, yCoord,
 				        zCoord);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -88,7 +84,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord - +1, yCoord,
 				        zCoord);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -97,7 +93,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord, yCoord + 1,
 				        zCoord);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -106,7 +102,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord, yCoord - 1,
 				        zCoord);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -115,7 +111,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord, yCoord,
 				        zCoord + 1);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -124,7 +120,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 				ElectricStorageEntity entity = (ElectricStorageEntity) worldObj.getTileEntity(xCoord, yCoord,
 				        zCoord - 1);
 				if (entity != null) {
-					connected.add(entity);
+					connected.put(entity, false);
 				}
 			} catch (ClassCastException e) {
 
@@ -147,7 +143,7 @@ public class ElectricStorageEntity extends FunctionalEntity {
 		// TODO Auto-generated method stub
 		try {
 			ElectricStorageEntity cableEntity = (ElectricStorageEntity) which;
-			connected.add(cableEntity);
+			connected.put(cableEntity, false);
 		} catch (ClassCastException e) {
 			// TODO: handle exception
 		}

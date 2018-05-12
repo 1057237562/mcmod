@@ -67,45 +67,45 @@ public class SciRevolution {
 	public static final String MODID = "scirev";
 	public static final String VERSION = "1.0";
 	//Blocks
-	public static Macerator mac = (Macerator) new Macerator(false).setBlockName("Macerator").setHardness(0.5f);
-	public static Macerator lit_mac = (Macerator) new Macerator(true).setBlockName("Lit_Macerator").setHardness(0.5f)
+	public static Macerator mac = (Macerator) new Macerator(false).setBlockName("Macerator").setHardness(2f);
+	public static Macerator lit_mac = (Macerator) new Macerator(true).setBlockName("Lit_Macerator").setHardness(2f)
 	        .setLightLevel(15).setLightOpacity(15);
-	public static Extrusioner ex = (Extrusioner) new Extrusioner(false).setBlockName("Extrusioner").setHardness(0.5f);
+	public static Extrusioner ex = (Extrusioner) new Extrusioner(false).setBlockName("Extrusioner").setHardness(2f);
 	public static Extrusioner lit_ex = (Extrusioner) new Extrusioner(true).setBlockName("Lit_Extrusioner")
-	        .setHardness(0.5f);
-	public static Generator gen = (Generator) new Generator(false).setBlockName("Generator").setHardness(0.5f);
-	public static Generator lit_gen = (Generator) new Generator(true).setBlockName("Lit_Generator").setHardness(0.5f)
+	        .setHardness(2f);
+	public static Generator gen = (Generator) new Generator(false).setBlockName("Generator").setHardness(2f);
+	public static Generator lit_gen = (Generator) new Generator(true).setBlockName("Lit_Generator").setHardness(2f)
 	        .setLightLevel(15).setLightOpacity(15);
 	public static BlastFurnace bf = (BlastFurnace) new BlastFurnace(false).setBlockName("BlastFurnace")
-	        .setHardness(0.5f);
+	        .setHardness(2f);
 	public static BlastFurnace lit_bf = (BlastFurnace) new BlastFurnace(true).setBlockName("Lit_BlastFurnace")
-	        .setHardness(0.5f).setLightLevel(15).setLightOpacity(15);
+	        .setHardness(2f).setLightLevel(15).setLightOpacity(15);
 	public static ElectroFurnace ef = (ElectroFurnace) new ElectroFurnace(false).setBlockName("ElectroFurnace")
-	        .setHardness(0.5f);
+	        .setHardness(2f);
 	public static ElectroFurnace lit_ef = (ElectroFurnace) new ElectroFurnace(true).setBlockName("Lit_ElectroFurnace")
-	        .setHardness(0.5f).setLightLevel(15).setLightOpacity(15);
+	        .setHardness(2f).setLightLevel(15).setLightOpacity(15);
 
 	public static LatheManipulatePanel lmp = (LatheManipulatePanel) new LatheManipulatePanel()
-	        .setBlockName("LatheManipulatePanel").setHardness(0.5f);
+	        .setBlockName("LatheManipulatePanel").setHardness(2f);
 	public static LatheBottomShell lbs = (LatheBottomShell) new LatheBottomShell().setBlockName("LatheBottomShell")
-	        .setHardness(0.5f);
+	        .setHardness(2f);
 	public static LathePowerSource lps = (LathePowerSource) new LathePowerSource().setBlockName("LathePowerSource")
-	        .setHardness(0.5f);
+	        .setHardness(2f);
 
 	public static Block ore_copperblock = new CopperOre(Material.rock).setBlockName("CopperOre")
-	        .setBlockTextureName("scirev:ore_copper").setHardness(0.5f);
+	        .setBlockTextureName("scirev:ore_copper").setHardness(2f);
 	public static Block ore_alblock = new AluminumOre(Material.rock).setBlockName("AluminumOre")
-	        .setBlockTextureName("scirev:ore_aluminum").setHardness(0.5f);
+	        .setBlockTextureName("scirev:ore_aluminum").setHardness(2f);
 	public static Block ore_magblock = new MagnetOre(Material.rock).setBlockName("MagnetOre")
-	        .setBlockTextureName("scirev:ore_magnet").setHardness(0.5f);
+	        .setBlockTextureName("scirev:ore_magnet").setHardness(2f);
 	public static Cable cable = new Cable();
 
-	public static Block insulationstone = new InsulationStone().setBlockName("InsulationStone").setHardness(0.5f)
+	public static Block insulationstone = new InsulationStone().setBlockName("InsulationStone").setHardness(1.5f)
 	        .setResistance(6f).setBlockTextureName("scirev:insulationstone");
 
-	public static Block alshellblock = new AluminumShellBlock().setBlockName("AluminumShellBlock").setHardness(0.5f)
+	public static Block alshellblock = new AluminumShellBlock().setBlockName("AluminumShellBlock").setHardness(2f)
 	        .setResistance(6f).setBlockTextureName("scirev:alshellblock");
-	public static Block ironshellblock = new IronShellBlock().setBlockName("IronShellBlock").setHardness(0.5f)
+	public static Block ironshellblock = new IronShellBlock().setBlockName("IronShellBlock").setHardness(2f)
 	        .setResistance(6f).setBlockTextureName("scirev:ironshellblock");
 	//Items
 	public static Item alingot = new Item().setUnlocalizedName("AluminumIngot").setTextureName("scirev:aluminum_ingot");

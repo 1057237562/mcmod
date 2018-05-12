@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -161,6 +162,12 @@ public class Macerator extends BlockContainer {
 		MaceratorTileEntity Entity = (MaceratorTileEntity) world.getTileEntity(x, y, z);
 		Entity.onBlockPlaced(world, x, y, z);
 		super.onPostBlockPlaced(world, x, y, z, p_149714_5_);
+	}
+	
+	@Override
+	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
+		// TODO Auto-generated method stub
+		return Item.getItemFromBlock(SciRevolution.mac);
 	}
 
 }
