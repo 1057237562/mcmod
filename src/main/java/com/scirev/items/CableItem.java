@@ -4,6 +4,7 @@ import com.scirev.blocks.container.functional.Cable;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -69,7 +70,7 @@ public class CableItem extends Item {
 	}
 
 	public boolean createBlock(World world, int x, int y, int z, int side) {
-		if (world.setBlock(x, y, z, bindBlock)) {
+		if (world.getBlock(x, y, z) == Blocks.air && world.setBlock(x, y, z, bindBlock)) {
 			world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 			world.getBlock(x, y, z).createTileEntity(world, meta);
 			world.getBlock(x, y, z).onPostBlockPlaced(world, x, y, z, side);

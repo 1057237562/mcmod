@@ -1,20 +1,20 @@
-[12:39:21] [main/INFO]: Setting user: Player141
-[12:39:24] [Client thread/INFO]: LWJGL Version: 2.9.1
-[12:39:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
-[12:39:45] [Sound Library Loader/INFO]: Sound engine started
-[12:40:25] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[12:40:25] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[12:40:26] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
-[12:40:27] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[12:40:28] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[12:40:29] [Sound Library Loader/INFO]: Sound engine started
-[12:40:39] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[12:40:39] [Server thread/INFO]: Generating keypair
-[12:40:39] [Server thread/INFO]: Preparing start region for level 0
-[12:40:41] [Server thread/INFO]: Changing view distance to 8, from 10
-[12:40:42] [Server thread/INFO]: Player141[local:E:edcd3be1] logged in with entity id 181 at (571.308724046294, 7.166109260938214, 340.09596693941097)
-[12:40:42] [Server thread/INFO]: Player141 加入了游戏
-[12:40:58] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@653624[id=13903417-0079-35e6-a076-39ae0c76dff1,name=Player141,properties={},legacy=false]
+[18:36:05] [main/INFO]: Setting user: Player602
+[18:36:06] [Client thread/INFO]: LWJGL Version: 2.9.1
+[18:36:18] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[18:36:19] [Sound Library Loader/INFO]: Sound engine started
+[18:36:35] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[18:36:35] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[18:36:35] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[18:36:35] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[18:36:36] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[18:36:37] [Sound Library Loader/INFO]: Sound engine started
+[18:37:06] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[18:37:06] [Server thread/INFO]: Generating keypair
+[18:37:07] [Server thread/INFO]: Preparing start region for level 0
+[18:37:08] [Server thread/INFO]: Changing view distance to 8, from 10
+[18:37:08] [Server thread/INFO]: Player602[local:E:3db6e1ce] logged in with entity id 181 at (561.9643360806313, 4.0, 360.6488421648305)
+[18:37:08] [Server thread/INFO]: Player602 加入了游戏
+[18:37:09] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@1fd263d[id=7fef5833-06c9-398a-84c0-fbd3a81ff548,name=Player602,properties={},legacy=false]
 com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:71) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:158) [YggdrasilMinecraftSessionService.class:?]
@@ -35,19 +35,25 @@ com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_131]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_131]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_131]
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_131]
-	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_131]
-	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_131]
-	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_131]
-	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465) ~[?:1.8.0_131]
-	at sun.security.ssl.InputRecord.read(InputRecord.java:503) ~[?:1.8.0_131]
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973) ~[?:1.8.0_131]
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1375) ~[?:1.8.0_131]
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1403) ~[?:1.8.0_131]
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1387) ~[?:1.8.0_131]
-	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559) ~[?:1.8.0_131]
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185) ~[?:1.8.0_131]
+Caused by: java.net.UnknownHostException: sessionserver.mojang.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184) ~[?:1.8.0_131]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_131]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_131]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668) ~[?:1.8.0_131]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[?:1.8.0_131]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[?:1.8.0_131]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[?:1.8.0_131]
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264) ~[?:1.8.0_131]
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367) ~[?:1.8.0_131]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191) ~[?:1.8.0_131]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181) ~[?:1.8.0_131]
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1022) ~[?:1.8.0_131]
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1020) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782) ~[?:1.8.0_131]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1019) ~[?:1.8.0_131]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177) ~[?:1.8.0_131]
 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546) ~[?:1.8.0_131]
 	at sun.net.www.protocol.http.HttpURLConnection.access$200(HttpURLConnection.java:91) ~[?:1.8.0_131]
 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1466) ~[?:1.8.0_131]
@@ -59,16 +65,16 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:126) ~[HttpAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:54) ~[YggdrasilAuthenticationService.class:?]
 	... 18 more
-[12:41:33] [Server thread/INFO]: Player141 刚刚获得了 [打开物品栏] 成就！
-[12:41:34] [Client thread/INFO]: [CHAT] Player141 刚刚获得了 [打开物品栏] 成就！
-[12:41:36] [Server thread/INFO]: Saving and pausing game...
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
-[12:41:36] [Server thread/INFO]: Stopping server
-[12:41:36] [Server thread/INFO]: Saving players
-[12:41:36] [Server thread/INFO]: Saving worlds
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
-[12:41:36] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
-[12:41:38] [Client thread/INFO]: Stopping!
+[18:37:13] [Server thread/INFO]: Player602 刚刚获得了 [打开物品栏] 成就！
+[18:37:13] [Client thread/INFO]: [CHAT] Player602 刚刚获得了 [打开物品栏] 成就！
+[18:37:40] [Server thread/INFO]: Saving and pausing game...
+[18:37:40] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[18:37:40] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[18:37:40] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[18:37:40] [Server thread/INFO]: Stopping server
+[18:37:40] [Server thread/INFO]: Saving players
+[18:37:40] [Server thread/INFO]: Saving worlds
+[18:37:40] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[18:37:41] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[18:37:41] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[18:37:41] [Client thread/INFO]: Stopping!

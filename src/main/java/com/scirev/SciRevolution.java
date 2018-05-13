@@ -7,7 +7,9 @@ import com.scirev.blocks.AluminumShellBlock;
 import com.scirev.blocks.InsulationStone;
 import com.scirev.blocks.IronShellBlock;
 import com.scirev.blocks.container.functional.BlastFurnace;
+import com.scirev.blocks.container.functional.Bowl;
 import com.scirev.blocks.container.functional.Cable;
+import com.scirev.blocks.container.functional.CutRubberLog;
 import com.scirev.blocks.container.functional.ElectroFurnace;
 import com.scirev.blocks.container.functional.Extrusioner;
 import com.scirev.blocks.container.functional.Generator;
@@ -15,7 +17,9 @@ import com.scirev.blocks.container.functional.LatheBottomShell;
 import com.scirev.blocks.container.functional.LatheManipulatePanel;
 import com.scirev.blocks.container.functional.LathePowerSource;
 import com.scirev.blocks.container.functional.Macerator;
+import com.scirev.blocks.container.functional.WoodenPipe;
 import com.scirev.blocks.container.functional.tileentity.BlastFurnaceEntity;
+import com.scirev.blocks.container.functional.tileentity.BowlEntity;
 import com.scirev.blocks.container.functional.tileentity.CableEntity;
 import com.scirev.blocks.container.functional.tileentity.ElectroFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.ExtrusionerTileEntity;
@@ -24,15 +28,28 @@ import com.scirev.blocks.container.functional.tileentity.LatheBottomShellEntity;
 import com.scirev.blocks.container.functional.tileentity.LatheManipulatePanelEntity;
 import com.scirev.blocks.container.functional.tileentity.LathePowerSourceEntity;
 import com.scirev.blocks.container.functional.tileentity.MaceratorTileEntity;
+import com.scirev.blocks.container.functional.tileentity.WoodenPipeEntity;
+import com.scirev.blocks.models.ModelPipe;
+import com.scirev.blocks.models.tileentity.RenderBowl;
 import com.scirev.blocks.models.tileentity.RenderCable;
 import com.scirev.blocks.models.tileentity.RenderLBS;
 import com.scirev.blocks.models.tileentity.RenderLMP;
 import com.scirev.blocks.models.tileentity.RenderLPS;
+import com.scirev.blocks.models.tileentity.RenderPipe;
+import com.scirev.blocks.nature.GeneralLeaf;
+import com.scirev.blocks.nature.GeneralLog;
+import com.scirev.blocks.nature.GeneralSapling;
+import com.scirev.blocks.nature.LeafItems;
+import com.scirev.blocks.nature.LogItems;
+import com.scirev.blocks.nature.SaplingItems;
 import com.scirev.blocks.ore.AluminumOre;
 import com.scirev.blocks.ore.CopperOre;
 import com.scirev.blocks.ore.MagnetOre;
 import com.scirev.blocks.ore.gen.OreGenerator;
+import com.scirev.blocks.ore.gen.TreeGenerator;
+import com.scirev.items.BowlItem;
 import com.scirev.items.CableItem;
+import com.scirev.items.render.GenericItemRenderer;
 import com.scirev.recipe.AdvRecipe;
 import com.scirev.recipe.AdvShapelessRecipe;
 import com.scirev.recipe.BlastFurnaceRecipe;
@@ -47,7 +64,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.ExistingSubstitutionException;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.GameRegistry.Type;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -58,6 +77,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.RecipeSorter;
 
@@ -107,6 +128,17 @@ public class SciRevolution {
 	        .setResistance(6f).setBlockTextureName("scirev:alshellblock");
 	public static Block ironshellblock = new IronShellBlock().setBlockName("IronShellBlock").setHardness(2f)
 	        .setResistance(6f).setBlockTextureName("scirev:ironshellblock");
+
+	public static Block generallog = new GeneralLog().setBlockName("GeneralLog").setBlockTextureName("scirev:log")
+	        .setHardness(0.5f);
+	public static Block generalleave = new GeneralLeaf().setBlockName("GeneralLeaf").setBlockTextureName("scirev:leaf");
+	public static Block generalsapling = new GeneralSapling().setBlockName("GeneralSapling")
+	        .setBlockTextureName("scirev:sapling");
+
+	public static Block cutrubberlog = new CutRubberLog(true).setBlockName("CutRubberLog").setHardness(0.5f);
+	public static Block norubberlog = new CutRubberLog(false).setBlockName("NoRubberLog").setHardness(0.5f);
+	public static Block woodenpipe = new WoodenPipe().setBlockName("WoodenPipe").setHardness(0.5f);
+	public static Block bowl = new Bowl().setBlockName("Bowl").setHardness(0.5f);
 	//Items
 	public static Item alingot = new Item().setUnlocalizedName("AluminumIngot").setTextureName("scirev:aluminum_ingot");
 	public static Item copperingot = new Item().setUnlocalizedName("CopperIngot").setTextureName("scirev:copper_ingot");
@@ -137,10 +169,17 @@ public class SciRevolution {
 	public static Item alcable = new CableItem(cable, 1).setUnlocalizedName("AluminumCable")
 	        .setTextureName("scirev:al_cable");
 
+	public static Item rawrubber = new Item().setUnlocalizedName("RawRubber").setTextureName("scirev:rawrubber");
+	public static Item rubber = new Item().setUnlocalizedName("Rubber").setTextureName("scirev:rubber");
+
 	public static CraftiveItem cp = (CraftiveItem) new CraftiveItem().setUnlocalizedName("CuttingPincer")
 	        .setTextureName("scirev:cutting_pincer").setMaxDamage(80).setMaxStackSize(1);
 	public static CraftiveItem hammer = (CraftiveItem) new CraftiveItem().setUnlocalizedName("Hammer")
 	        .setTextureName("scirev:hammer").setMaxDamage(120).setMaxStackSize(1);
+
+	//Replace Item
+	public static Item itembowl = new BowlItem(bowl).setUnlocalizedName("bowl").setTextureName("minecraft:bowl")
+	        .setCreativeTab(CreativeTabs.tabMaterials);
 
 	public static CreativeTabs scirevCTab = new CreativeTabs("SciRevolution") {
 		@Override
@@ -202,10 +241,18 @@ public class SciRevolution {
 		co.setCreativeTab(scirevCTab);
 		gb.setCreativeTab(scirevCTab);
 		wb.setCreativeTab(scirevCTab);
+		rawrubber.setCreativeTab(scirevCTab);
+		rubber.setCreativeTab(scirevCTab);
 
 		insulationstone.setCreativeTab(scirevCTab);
 		alshellblock.setCreativeTab(scirevCTab);
 		ironshellblock.setCreativeTab(scirevCTab);
+
+		generallog.setCreativeTab(scirevCTab);
+		generalleave.setCreativeTab(scirevCTab);
+		generalsapling.setCreativeTab(scirevCTab);
+		
+		woodenpipe.setCreativeTab(scirevCTab);
 
 		//Registry
 		GameRegistry.registerBlock(ore_copperblock, ore_copperblock.getUnlocalizedName());
@@ -229,6 +276,15 @@ public class SciRevolution {
 		GameRegistry.registerBlock(alshellblock, alshellblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ironshellblock, ironshellblock.getUnlocalizedName());
 
+		GameRegistry.registerBlock(generallog, LogItems.class, generallog.getUnlocalizedName());
+		GameRegistry.registerBlock(generalleave, LeafItems.class, generalleave.getUnlocalizedName());
+		GameRegistry.registerBlock(generalsapling, SaplingItems.class, generalsapling.getUnlocalizedName());
+
+		GameRegistry.registerBlock(cutrubberlog, cutrubberlog.getUnlocalizedName());
+		GameRegistry.registerBlock(norubberlog, norubberlog.getUnlocalizedName());
+		GameRegistry.registerBlock(woodenpipe, woodenpipe.getUnlocalizedName());
+		GameRegistry.registerBlock(bowl, bowl.getUnlocalizedName());
+
 		GameRegistry.registerItem(alingot, alingot.getUnlocalizedName());
 		GameRegistry.registerItem(copperingot, copperingot.getUnlocalizedName());
 		GameRegistry.registerItem(magnet, magnet.getUnlocalizedName());
@@ -240,6 +296,8 @@ public class SciRevolution {
 		GameRegistry.registerItem(co, co.getUnlocalizedName());
 		GameRegistry.registerItem(gb, gb.getUnlocalizedName());
 		GameRegistry.registerItem(wb, wb.getUnlocalizedName());
+		GameRegistry.registerItem(rawrubber, rawrubber.getUnlocalizedName());
+		GameRegistry.registerItem(rubber, rubber.getUnlocalizedName());
 
 		GameRegistry.registerItem(copperplate, copperplate.getUnlocalizedName());
 		GameRegistry.registerItem(alplate, alplate.getUnlocalizedName());
@@ -256,6 +314,14 @@ public class SciRevolution {
 
 		GameRegistry.registerItem(cp, cp.getUnlocalizedName());
 		GameRegistry.registerItem(hammer, hammer.getUnlocalizedName());
+
+		//Replace
+		try {
+			GameRegistry.addSubstitutionAlias("minecraft:bowl", Type.ITEM, itembowl);
+		} catch (ExistingSubstitutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		GameRegistry.addSmelting(ore_copperblock, new ItemStack(copperingot), 0.6f);
 		GameRegistry.addSmelting(copperpowder, new ItemStack(copperingot), 0.6f);
@@ -289,6 +355,8 @@ public class SciRevolution {
 
 		GameRegistry.addShapedRecipe(new ItemStack(bt),
 		        new Object[] { " 1 ", "232", " 3 ", '1', Items.coal, '2', alplate, '3', Items.redstone });
+		GameRegistry.addShapedRecipe(new ItemStack(woodenpipe),
+		        new Object[] { "   ", "1 1", "111", '1', Blocks.planks });
 
 		RecipeSorter.register("scirev:shaped", AdvRecipe.class, RecipeSorter.Category.SHAPED,
 		        "after:minecraft:shapeless");
@@ -319,15 +387,25 @@ public class SciRevolution {
 		GameRegistry.registerTileEntity(LatheBottomShellEntity.class, "LatheBottomShellEntity");
 		GameRegistry.registerTileEntity(LatheManipulatePanelEntity.class, "LatheManipulatePanelEntity");
 		GameRegistry.registerTileEntity(LathePowerSourceEntity.class, "LathePowerSourceEntity");
+		GameRegistry.registerTileEntity(WoodenPipeEntity.class, "WoodenPipeEntity");
+		GameRegistry.registerTileEntity(BowlEntity.class, "BowlEntity");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
 		GameRegistry.registerWorldGenerator(new OreGenerator(), 0);
+		GameRegistry.registerWorldGenerator(new TreeGenerator(), 1);
 
 		ClientRegistry.bindTileEntitySpecialRenderer(CableEntity.class, new RenderCable());
 		ClientRegistry.bindTileEntitySpecialRenderer(LatheBottomShellEntity.class, new RenderLBS());
 		ClientRegistry.bindTileEntitySpecialRenderer(LatheManipulatePanelEntity.class, new RenderLMP());
 		ClientRegistry.bindTileEntitySpecialRenderer(LathePowerSourceEntity.class, new RenderLPS());
+		ClientRegistry.bindTileEntitySpecialRenderer(WoodenPipeEntity.class, new RenderPipe());
+		ClientRegistry.bindTileEntitySpecialRenderer(BowlEntity.class, new RenderBowl());
+
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.woodenpipe),
+		        new GenericItemRenderer(
+		                new ResourceLocation("scirev:textures/blocks/woodenpipe.png"),
+		                new ModelPipe()));
 
 		//Removing Original
 		removeSmelt(Blocks.iron_ore);
