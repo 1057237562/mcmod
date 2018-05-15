@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLPS extends TileEntitySpecialRenderer {
 	private ModelLathePowerSource model;
-	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lathepowersource.png");
+	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lps.png");
 
 	public RenderLPS() {
 		model = new ModelLathePowerSource();

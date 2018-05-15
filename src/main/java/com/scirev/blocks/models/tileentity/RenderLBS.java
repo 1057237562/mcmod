@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLBS extends TileEntitySpecialRenderer {
 	private ModelLatheBottomShell model;
-	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lathebottomshell.png");
+	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lbs.png");
 
 	public RenderLBS() {
 		model = new ModelLatheBottomShell();

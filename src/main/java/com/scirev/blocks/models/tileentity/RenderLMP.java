@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLMP extends TileEntitySpecialRenderer {
 	private ModelLatheManipulatePanel model;
-	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lathemanipulatepanel.png");
+	private ResourceLocation resourceLocation = new ResourceLocation("scirev:textures/blocks/lmp.png");
 
 	public RenderLMP() {
 		model = new ModelLatheManipulatePanel();

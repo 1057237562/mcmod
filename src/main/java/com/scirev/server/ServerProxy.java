@@ -5,11 +5,13 @@ import com.scirev.blocks.container.functional.container.ElectroFurnaceContainer;
 import com.scirev.blocks.container.functional.container.ExtrusionerContainer;
 import com.scirev.blocks.container.functional.container.GeneratorContainer;
 import com.scirev.blocks.container.functional.container.MaceratorContainer;
+import com.scirev.blocks.container.functional.container.SteamEngineContainer;
 import com.scirev.blocks.container.functional.tileentity.BlastFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.ElectroFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.ExtrusionerTileEntity;
 import com.scirev.blocks.container.functional.tileentity.GeneratorEntity;
 import com.scirev.blocks.container.functional.tileentity.MaceratorTileEntity;
+import com.scirev.blocks.container.functional.tileentity.SteamEngineEntity;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -40,6 +42,9 @@ public class ServerProxy implements IGuiHandler {
 			case 5:
 				return new ElectroFurnaceContainer(player.inventory,
 				        (ElectroFurnaceEntity) player.worldObj.getTileEntity(x, y, z));
+			case 6:
+				return new SteamEngineContainer(player.inventory,
+				        (SteamEngineEntity) player.worldObj.getTileEntity(x, y, z));
 		}
 		return null;
 	}

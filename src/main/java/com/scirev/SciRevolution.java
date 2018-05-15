@@ -17,6 +17,7 @@ import com.scirev.blocks.container.functional.LatheBottomShell;
 import com.scirev.blocks.container.functional.LatheManipulatePanel;
 import com.scirev.blocks.container.functional.LathePowerSource;
 import com.scirev.blocks.container.functional.Macerator;
+import com.scirev.blocks.container.functional.SteamEngine;
 import com.scirev.blocks.container.functional.WoodenPipe;
 import com.scirev.blocks.container.functional.tileentity.BlastFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.BowlEntity;
@@ -28,7 +29,11 @@ import com.scirev.blocks.container.functional.tileentity.LatheBottomShellEntity;
 import com.scirev.blocks.container.functional.tileentity.LatheManipulatePanelEntity;
 import com.scirev.blocks.container.functional.tileentity.LathePowerSourceEntity;
 import com.scirev.blocks.container.functional.tileentity.MaceratorTileEntity;
+import com.scirev.blocks.container.functional.tileentity.SteamEngineEntity;
 import com.scirev.blocks.container.functional.tileentity.WoodenPipeEntity;
+import com.scirev.blocks.models.ModelLatheBottomShell;
+import com.scirev.blocks.models.ModelLatheManipulatePanel;
+import com.scirev.blocks.models.ModelLathePowerSource;
 import com.scirev.blocks.models.ModelPipe;
 import com.scirev.blocks.models.tileentity.RenderBowl;
 import com.scirev.blocks.models.tileentity.RenderCable;
@@ -36,6 +41,7 @@ import com.scirev.blocks.models.tileentity.RenderLBS;
 import com.scirev.blocks.models.tileentity.RenderLMP;
 import com.scirev.blocks.models.tileentity.RenderLPS;
 import com.scirev.blocks.models.tileentity.RenderPipe;
+import com.scirev.blocks.models.tileentity.RenderSE;
 import com.scirev.blocks.nature.GeneralLeaf;
 import com.scirev.blocks.nature.GeneralLog;
 import com.scirev.blocks.nature.GeneralSapling;
@@ -88,6 +94,7 @@ public class SciRevolution {
 	public static final String MODID = "scirev";
 	public static final String VERSION = "1.0";
 	//Blocks
+	public static SteamEngine se = (SteamEngine) new SteamEngine().setBlockName("SteamEngine").setHardness(2f);
 	public static Macerator mac = (Macerator) new Macerator(false).setBlockName("Macerator").setHardness(2f);
 	public static Macerator lit_mac = (Macerator) new Macerator(true).setBlockName("Lit_Macerator").setHardness(2f)
 	        .setLightLevel(15).setLightOpacity(15);
@@ -143,11 +150,13 @@ public class SciRevolution {
 	public static Item alingot = new Item().setUnlocalizedName("AluminumIngot").setTextureName("scirev:aluminum_ingot");
 	public static Item copperingot = new Item().setUnlocalizedName("CopperIngot").setTextureName("scirev:copper_ingot");
 	public static Item magnet = new Item().setUnlocalizedName("Magnet").setTextureName("scirev:magnet");
+	public static Item steel_ingot = new Item().setUnlocalizedName("SteelIngot").setTextureName("scirev:steel_ingot");
 
 	public static Item ironpowder = new Item().setUnlocalizedName("IronPowder").setTextureName("scirev:ironpowder");
 	public static Item copperpowder = new Item().setUnlocalizedName("CopperPowder")
 	        .setTextureName("scirev:copperpowder");
 	public static Item alpowder = new Item().setUnlocalizedName("AluminumPowder").setTextureName("scirev:alpowder");
+	public static Item meltiron = new Item().setUnlocalizedName("MeltIron").setTextureName("scirev:meltiron");
 
 	public static Item co = new Item().setUnlocalizedName("CarbonMonoxide").setTextureName("scirev:gasbottle_co");
 	public static Item gb = new Item().setUnlocalizedName("Beaker").setTextureName("scirev:beaker");
@@ -158,6 +167,7 @@ public class SciRevolution {
 	public static Item copperplate = new Item().setUnlocalizedName("CopperPlate").setTextureName("scirev:copper_plate");
 	public static Item alplate = new Item().setUnlocalizedName("AluminumPlate").setTextureName("scirev:aluminum_plate");
 	public static Item ironplate = new Item().setUnlocalizedName("IronPlate").setTextureName("scirev:iron_plate");
+	public static Item steelplate = new Item().setUnlocalizedName("SteelPlate").setTextureName("scirev:steel_plate");
 	public static Item alshell = new Item().setUnlocalizedName("AluminumShell").setTextureName("scirev:aluminum_shell");
 	public static Item ironshell = new Item().setUnlocalizedName("IronShell").setTextureName("scirev:iron_shell");
 
@@ -203,6 +213,7 @@ public class SciRevolution {
 		ore_copperblock.setCreativeTab(scirevCTab);
 		ore_alblock.setCreativeTab(scirevCTab);
 		ore_magblock.setCreativeTab(scirevCTab);
+		se.setCreativeTab(scirevCTab);
 		gen.setCreativeTab(scirevCTab);
 		mac.setCreativeTab(scirevCTab);
 		ex.setCreativeTab(scirevCTab);
@@ -215,12 +226,14 @@ public class SciRevolution {
 		alingot.setCreativeTab(scirevCTab);
 		copperingot.setCreativeTab(scirevCTab);
 		magnet.setCreativeTab(scirevCTab);
+		steel_ingot.setCreativeTab(scirevCTab);
 
 		copperplate.setCreativeTab(scirevCTab);
 		alplate.setCreativeTab(scirevCTab);
 		ironplate.setCreativeTab(scirevCTab);
 		alplate.setCreativeTab(scirevCTab);
 		ironplate.setCreativeTab(scirevCTab);
+		steelplate.setCreativeTab(scirevCTab);
 		alshell.setCreativeTab(scirevCTab);
 		ironshell.setCreativeTab(scirevCTab);
 
@@ -237,6 +250,7 @@ public class SciRevolution {
 		ironpowder.setCreativeTab(scirevCTab);
 		copperpowder.setCreativeTab(scirevCTab);
 		alpowder.setCreativeTab(scirevCTab);
+		meltiron.setCreativeTab(scirevCTab);
 
 		co.setCreativeTab(scirevCTab);
 		gb.setCreativeTab(scirevCTab);
@@ -258,6 +272,7 @@ public class SciRevolution {
 		GameRegistry.registerBlock(ore_copperblock, ore_copperblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_alblock, ore_alblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_magblock, ore_magblock.getUnlocalizedName());
+		GameRegistry.registerBlock(se, se.getUnlocalizedName());
 		GameRegistry.registerBlock(gen, gen.getUnlocalizedName());
 		GameRegistry.registerBlock(lit_gen, lit_gen.getUnlocalizedName());
 		GameRegistry.registerBlock(mac, mac.getUnlocalizedName());
@@ -288,10 +303,12 @@ public class SciRevolution {
 		GameRegistry.registerItem(alingot, alingot.getUnlocalizedName());
 		GameRegistry.registerItem(copperingot, copperingot.getUnlocalizedName());
 		GameRegistry.registerItem(magnet, magnet.getUnlocalizedName());
+		GameRegistry.registerItem(steel_ingot, steel_ingot.getUnlocalizedName());
 
 		GameRegistry.registerItem(ironpowder, ironpowder.getUnlocalizedName());
 		GameRegistry.registerItem(copperpowder, copperpowder.getUnlocalizedName());
 		GameRegistry.registerItem(alpowder, alpowder.getUnlocalizedName());
+		GameRegistry.registerItem(meltiron, meltiron.getUnlocalizedName());
 
 		GameRegistry.registerItem(co, co.getUnlocalizedName());
 		GameRegistry.registerItem(gb, gb.getUnlocalizedName());
@@ -302,6 +319,7 @@ public class SciRevolution {
 		GameRegistry.registerItem(copperplate, copperplate.getUnlocalizedName());
 		GameRegistry.registerItem(alplate, alplate.getUnlocalizedName());
 		GameRegistry.registerItem(ironplate, ironplate.getUnlocalizedName());
+		GameRegistry.registerItem(steelplate, steelplate.getUnlocalizedName());
 		GameRegistry.registerItem(alshell, alshell.getUnlocalizedName());
 		GameRegistry.registerItem(ironshell, ironshell.getUnlocalizedName());
 
@@ -328,6 +346,7 @@ public class SciRevolution {
 		GameRegistry.addSmelting(ore_magblock, new ItemStack(magnet), 0.6f);
 
 		GameRegistry.addSmelting(Items.coal, new ItemStack(co, 4), 0.3f);
+		GameRegistry.addSmelting(rawrubber, new ItemStack(rubber, 1), 0.3f);
 
 		GameRegistry.addShapedRecipe(new ItemStack(cp),
 		        new Object[] { "1 1", " 1 ", "2 2", '1', Items.iron_ingot, '2', Items.stick });
@@ -349,9 +368,9 @@ public class SciRevolution {
 		GameRegistry.addShapedRecipe(new ItemStack(gen), new Object[] { "124", "131", "151", '1', ironplate, '2', motor,
 		        '3', wb, '4', bt, '5', Blocks.furnace });
 		GameRegistry.addShapedRecipe(new ItemStack(mac),
-		        new Object[] { "111", "232", "111", '1', ironplate, '2', motor, '3', Items.flint });
+		        new Object[] { "111", "232", "111", '1', steelplate, '2', motor, '3', Items.flint });
 		GameRegistry.addShapedRecipe(new ItemStack(ex),
-		        new Object[] { "121", "3 3", "421", '1', ironplate, '2', wb, '3', Blocks.stone, '4', motor });
+		        new Object[] { "121", "3 3", "421", '1', steelplate, '2', wb, '3', Blocks.stone, '4', motor });
 
 		GameRegistry.addShapedRecipe(new ItemStack(bt),
 		        new Object[] { " 1 ", "232", " 3 ", '1', Items.coal, '2', alplate, '3', Items.redstone });
@@ -389,6 +408,7 @@ public class SciRevolution {
 		GameRegistry.registerTileEntity(LathePowerSourceEntity.class, "LathePowerSourceEntity");
 		GameRegistry.registerTileEntity(WoodenPipeEntity.class, "WoodenPipeEntity");
 		GameRegistry.registerTileEntity(BowlEntity.class, "BowlEntity");
+		GameRegistry.registerTileEntity(SteamEngineEntity.class, "SteamEngineEntity");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
@@ -401,11 +421,21 @@ public class SciRevolution {
 		ClientRegistry.bindTileEntitySpecialRenderer(LathePowerSourceEntity.class, new RenderLPS());
 		ClientRegistry.bindTileEntitySpecialRenderer(WoodenPipeEntity.class, new RenderPipe());
 		ClientRegistry.bindTileEntitySpecialRenderer(BowlEntity.class, new RenderBowl());
+		ClientRegistry.bindTileEntitySpecialRenderer(SteamEngineEntity.class, new RenderSE());
 
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.woodenpipe),
 		        new GenericItemRenderer(
 		                new ResourceLocation("scirev:textures/blocks/woodenpipe.png"),
 		                new ModelPipe()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lmp),
+		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lmp.png"),
+		                new ModelLatheManipulatePanel()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lps),
+		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lps.png"),
+		                new ModelLathePowerSource()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lbs),
+		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lbs.png"),
+		                new ModelLatheBottomShell()));
 
 		//Removing Original
 		removeSmelt(Blocks.iron_ore);

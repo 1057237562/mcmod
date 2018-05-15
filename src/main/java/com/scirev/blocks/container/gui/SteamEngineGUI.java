@@ -1,0 +1,55 @@
+package com.scirev.blocks.container.gui;
+
+import org.lwjgl.opengl.GL11;
+
+import com.scirev.blocks.container.functional.container.SteamEngineContainer;
+import com.scirev.blocks.container.functional.tileentity.SteamEngineEntity;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.StatCollector;
+
+public class SteamEngineGUI extends GuiContainer {
+
+	SteamEngineEntity tile;
+
+	public SteamEngineGUI(InventoryPlayer inventory, SteamEngineEntity entity) {
+		super(new SteamEngineContainer(inventory, entity));
+		tile = entity;
+		doesGuiPauseGame();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected void drawGuiContainerForegroundLayer(int par1, int par2) {
+		super.drawGuiContainerForegroundLayer(par1, par2);
+		this.fontRendererObj.drawString(StatCollector.translateToLocal("tile.SteamEngine.name"), 65, 6, 4210752);
+		this.fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2,
+		        4210752);
+	}
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float p_146976_1_, int p_146976_2_, int p_146976_3_) {
+		// TODO Auto-generated method stub
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		this.mc.renderEngine.bindTexture(new ResourceLocation("scirev", "textures/gui/GUISteamEngine.png"));
+		int var5 = (this.width - this.xSize) / 2;
+		int var6 = (this.height - this.ySize) / 2;
+		this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
+		int b = tile.generatorBurnTime;
+		float maxBurnTime = tile.maxBurnTime * 1.0F;
+		if (b > 0 && maxBurnTime > 0) {
+			this.drawTexturedModalRect(this.guiLeft + 66,
+			        this.guiTop + 20 + (int) (14 - 14 * ((float) b / maxBurnTime)), 176,
+			        (int) (14 - 14 * ((float) b / maxBurnTime)), 14, (int) (14 * ((float) b / maxBurnTime)));
+		}
+
+		int p = tile.waterstorage;
+		float mp = SteamEngineEntity.maxwater * 1f;
+		if (p > 0) {
+			this.drawTexturedModalRect(this.guiLeft + 94, this.guiTop + 35, 176, 14, (int) (35 * ((float) p / mp)), 17);
+		}
+	}
+
+}
