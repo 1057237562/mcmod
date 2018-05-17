@@ -1,6 +1,6 @@
 package com.scirev.blocks.container.functional.tileentity;
 
-import com.scirev.recipe.MaceratorCraftingRecipe;
+import com.scirev.recipe.ForgeMachineCraftingRecipe;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -12,6 +12,7 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 
 	private ItemStack stack[] = new ItemStack[3];
 	public int progress = 0;
+	private int powerneed = 8;
 
 	public ForgeMachineEntity() {
 		// TODO Auto-generated constructor stub
@@ -103,7 +104,8 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 	public void updateEntity() {
 		// TODO Auto-generated method stub
 		if (!worldObj.isRemote) {
-			if (power > 0) {
+			if (powerhas - powerneed > 0) {
+				powerhas = 0;
 				if (canProgress()) {
 					progress++;
 					if (this.progress == 200) {
@@ -121,7 +123,7 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 		if (this.stack[0] == null) {
 			return false;
 		} else {
-			ItemStack itemstack = MaceratorCraftingRecipe.getOutput(this.stack[0]);
+			ItemStack itemstack = ForgeMachineCraftingRecipe.getOutput(this.stack[0]);
 			if (itemstack == null)
 				return false;
 			if (this.stack[2] == null)
@@ -134,7 +136,7 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 	}
 
 	private void makingItem() {
-		ItemStack itemstack = MaceratorCraftingRecipe.getOutput(this.stack[0]);
+		ItemStack itemstack = ForgeMachineCraftingRecipe.getOutput(this.stack[0]);
 
 		if (this.stack[2] == null) {
 			this.stack[2] = itemstack.copy();
@@ -142,7 +144,7 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 			this.stack[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
 		}
 
-		this.stack[0].stackSize -= MaceratorCraftingRecipe.getInputStack(this.stack[0]).stackSize;
+		this.stack[0].stackSize -= ForgeMachineCraftingRecipe.getInputStack(this.stack[0]).stackSize;
 
 		if (this.stack[0].stackSize <= 0) {
 			this.stack[0] = null;

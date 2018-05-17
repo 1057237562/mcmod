@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.scirev.blocks.AluminumShellBlock;
+import com.scirev.blocks.AnvilBlock;
 import com.scirev.blocks.InsulationStone;
 import com.scirev.blocks.IronShellBlock;
 import com.scirev.blocks.container.functional.BlastFurnace;
@@ -12,6 +13,7 @@ import com.scirev.blocks.container.functional.Cable;
 import com.scirev.blocks.container.functional.CutRubberLog;
 import com.scirev.blocks.container.functional.ElectroFurnace;
 import com.scirev.blocks.container.functional.Extrusioner;
+import com.scirev.blocks.container.functional.ForgeMachine;
 import com.scirev.blocks.container.functional.Generator;
 import com.scirev.blocks.container.functional.LatheBottomShell;
 import com.scirev.blocks.container.functional.LatheManipulatePanel;
@@ -24,6 +26,7 @@ import com.scirev.blocks.container.functional.tileentity.BowlEntity;
 import com.scirev.blocks.container.functional.tileentity.CableEntity;
 import com.scirev.blocks.container.functional.tileentity.ElectroFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.ExtrusionerTileEntity;
+import com.scirev.blocks.container.functional.tileentity.ForgeMachineEntity;
 import com.scirev.blocks.container.functional.tileentity.GeneratorEntity;
 import com.scirev.blocks.container.functional.tileentity.LatheBottomShellEntity;
 import com.scirev.blocks.container.functional.tileentity.LatheManipulatePanelEntity;
@@ -31,12 +34,15 @@ import com.scirev.blocks.container.functional.tileentity.LathePowerSourceEntity;
 import com.scirev.blocks.container.functional.tileentity.MaceratorTileEntity;
 import com.scirev.blocks.container.functional.tileentity.SteamEngineEntity;
 import com.scirev.blocks.container.functional.tileentity.WoodenPipeEntity;
+import com.scirev.blocks.models.ModelForgeMachine;
 import com.scirev.blocks.models.ModelLatheBottomShell;
 import com.scirev.blocks.models.ModelLatheManipulatePanel;
 import com.scirev.blocks.models.ModelLathePowerSource;
 import com.scirev.blocks.models.ModelPipe;
+import com.scirev.blocks.models.ModelSteamEngine;
 import com.scirev.blocks.models.tileentity.RenderBowl;
 import com.scirev.blocks.models.tileentity.RenderCable;
+import com.scirev.blocks.models.tileentity.RenderFM;
 import com.scirev.blocks.models.tileentity.RenderLBS;
 import com.scirev.blocks.models.tileentity.RenderLMP;
 import com.scirev.blocks.models.tileentity.RenderLPS;
@@ -60,6 +66,7 @@ import com.scirev.recipe.AdvRecipe;
 import com.scirev.recipe.AdvShapelessRecipe;
 import com.scirev.recipe.BlastFurnaceRecipe;
 import com.scirev.recipe.ExtrusionerCraftingRecipe;
+import com.scirev.recipe.ForgeMachineCraftingRecipe;
 import com.scirev.recipe.MaceratorCraftingRecipe;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -79,6 +86,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemAnvilBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -95,6 +103,7 @@ public class SciRevolution {
 	public static final String VERSION = "1.0";
 	//Blocks
 	public static SteamEngine se = (SteamEngine) new SteamEngine().setBlockName("SteamEngine").setHardness(2f);
+	public static ForgeMachine fm = (ForgeMachine) new ForgeMachine().setBlockName("ForgeMachine").setHardness(2f);
 	public static Macerator mac = (Macerator) new Macerator(false).setBlockName("Macerator").setHardness(2f);
 	public static Macerator lit_mac = (Macerator) new Macerator(true).setBlockName("Lit_Macerator").setHardness(2f)
 	        .setLightLevel(15).setLightOpacity(15);
@@ -104,8 +113,7 @@ public class SciRevolution {
 	public static Generator gen = (Generator) new Generator(false).setBlockName("Generator").setHardness(2f);
 	public static Generator lit_gen = (Generator) new Generator(true).setBlockName("Lit_Generator").setHardness(2f)
 	        .setLightLevel(15).setLightOpacity(15);
-	public static BlastFurnace bf = (BlastFurnace) new BlastFurnace(false).setBlockName("BlastFurnace")
-	        .setHardness(2f);
+	public static BlastFurnace bf = (BlastFurnace) new BlastFurnace(false).setBlockName("BlastFurnace").setHardness(2f);
 	public static BlastFurnace lit_bf = (BlastFurnace) new BlastFurnace(true).setBlockName("Lit_BlastFurnace")
 	        .setHardness(2f).setLightLevel(15).setLightOpacity(15);
 	public static ElectroFurnace ef = (ElectroFurnace) new ElectroFurnace(false).setBlockName("ElectroFurnace")
@@ -146,6 +154,7 @@ public class SciRevolution {
 	public static Block norubberlog = new CutRubberLog(false).setBlockName("NoRubberLog").setHardness(0.5f);
 	public static Block woodenpipe = new WoodenPipe().setBlockName("WoodenPipe").setHardness(0.5f);
 	public static Block bowl = new Bowl().setBlockName("Bowl").setHardness(0.5f);
+	public static Block anvil = new AnvilBlock().setBlockName("anvil").setHardness(0.5f);
 	//Items
 	public static Item alingot = new Item().setUnlocalizedName("AluminumIngot").setTextureName("scirev:aluminum_ingot");
 	public static Item copperingot = new Item().setUnlocalizedName("CopperIngot").setTextureName("scirev:copper_ingot");
@@ -190,6 +199,7 @@ public class SciRevolution {
 	//Replace Item
 	public static Item itembowl = new BowlItem(bowl).setUnlocalizedName("bowl").setTextureName("minecraft:bowl")
 	        .setCreativeTab(CreativeTabs.tabMaterials);
+	public static Item itemanvil = new ItemAnvilBlock(anvil).setUnlocalizedName("anvil");
 
 	public static CreativeTabs scirevCTab = new CreativeTabs("SciRevolution") {
 		@Override
@@ -214,6 +224,7 @@ public class SciRevolution {
 		ore_alblock.setCreativeTab(scirevCTab);
 		ore_magblock.setCreativeTab(scirevCTab);
 		se.setCreativeTab(scirevCTab);
+		fm.setCreativeTab(scirevCTab);
 		gen.setCreativeTab(scirevCTab);
 		mac.setCreativeTab(scirevCTab);
 		ex.setCreativeTab(scirevCTab);
@@ -265,7 +276,7 @@ public class SciRevolution {
 		generallog.setCreativeTab(scirevCTab);
 		generalleave.setCreativeTab(scirevCTab);
 		generalsapling.setCreativeTab(scirevCTab);
-		
+
 		woodenpipe.setCreativeTab(scirevCTab);
 
 		//Registry
@@ -273,6 +284,7 @@ public class SciRevolution {
 		GameRegistry.registerBlock(ore_alblock, ore_alblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_magblock, ore_magblock.getUnlocalizedName());
 		GameRegistry.registerBlock(se, se.getUnlocalizedName());
+		GameRegistry.registerBlock(fm, fm.getUnlocalizedName());
 		GameRegistry.registerBlock(gen, gen.getUnlocalizedName());
 		GameRegistry.registerBlock(lit_gen, lit_gen.getUnlocalizedName());
 		GameRegistry.registerBlock(mac, mac.getUnlocalizedName());
@@ -336,6 +348,14 @@ public class SciRevolution {
 		//Replace
 		try {
 			GameRegistry.addSubstitutionAlias("minecraft:bowl", Type.ITEM, itembowl);
+		} catch (ExistingSubstitutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			GameRegistry.addSubstitutionAlias("minecraft:anvil", Type.ITEM, itemanvil);
+			GameRegistry.addSubstitutionAlias("minecraft:anvil", Type.BLOCK, anvil);
 		} catch (ExistingSubstitutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -409,6 +429,7 @@ public class SciRevolution {
 		GameRegistry.registerTileEntity(WoodenPipeEntity.class, "WoodenPipeEntity");
 		GameRegistry.registerTileEntity(BowlEntity.class, "BowlEntity");
 		GameRegistry.registerTileEntity(SteamEngineEntity.class, "SteamEngineEntity");
+		GameRegistry.registerTileEntity(ForgeMachineEntity.class, "ForgeMachineEntity");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
@@ -422,20 +443,21 @@ public class SciRevolution {
 		ClientRegistry.bindTileEntitySpecialRenderer(WoodenPipeEntity.class, new RenderPipe());
 		ClientRegistry.bindTileEntitySpecialRenderer(BowlEntity.class, new RenderBowl());
 		ClientRegistry.bindTileEntitySpecialRenderer(SteamEngineEntity.class, new RenderSE());
+		ClientRegistry.bindTileEntitySpecialRenderer(ForgeMachineEntity.class, new RenderFM());
 
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.woodenpipe),
-		        new GenericItemRenderer(
-		                new ResourceLocation("scirev:textures/blocks/woodenpipe.png"),
+		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/woodenpipe.png"),
 		                new ModelPipe()));
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lmp),
-		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lmp.png"),
-		                new ModelLatheManipulatePanel()));
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lps),
-		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lps.png"),
-		                new ModelLathePowerSource()));
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lbs),
-		        new GenericItemRenderer(new ResourceLocation("scirev:textures/blocks/lbs.png"),
-		                new ModelLatheBottomShell()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lmp), new GenericItemRenderer(
+		        new ResourceLocation("scirev:textures/blocks/lmp.png"), new ModelLatheManipulatePanel()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lps), new GenericItemRenderer(
+		        new ResourceLocation("scirev:textures/blocks/lps.png"), new ModelLathePowerSource()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.lbs), new GenericItemRenderer(
+		        new ResourceLocation("scirev:textures/blocks/lbs.png"), new ModelLatheBottomShell()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.se), new GenericItemRenderer(
+		        new ResourceLocation("scirev:textures/blocks/steamengine.png"), new ModelSteamEngine()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SciRevolution.fm), new GenericItemRenderer(
+		        new ResourceLocation("scirev:textures/blocks/forgemachine.png"), new ModelForgeMachine()));
 
 		//Removing Original
 		removeSmelt(Blocks.iron_ore);
@@ -445,6 +467,7 @@ public class SciRevolution {
 		MaceratorCraftingRecipe.registerRecipe();
 		BlastFurnaceRecipe.registerRecipe();
 		ExtrusionerCraftingRecipe.registerRecipe();
+		ForgeMachineCraftingRecipe.registerRecipe();
 
 	}
 

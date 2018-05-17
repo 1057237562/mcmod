@@ -151,7 +151,7 @@ public class SteamEngineEntity extends FunctionalEntity implements IInventory {
 				} else {
 					Ticks++;
 				}
-			} else {
+			} else if (canOutput()) {
 				ItemStack burnItem = getStackInSlot(0);
 				int getBurnTime = TileEntityFurnace.getItemBurnTime(burnItem);
 				if (getBurnTime > 0 && waterstorage > 0) {
@@ -198,18 +198,68 @@ public class SteamEngineEntity extends FunctionalEntity implements IInventory {
 
 	private void output() {
 		switch (worldObj.getBlockMetadata(xCoord, yCoord, zCoord)) {
-			case value:
-
+			case 4:
+				transmitKinetic(xCoord - 1, yCoord, zCoord);
 			break;
 
-			default:
+			case 1:
+				transmitKinetic(xCoord, yCoord, zCoord - 1);
+			break;
+			case 2:
+				transmitKinetic(xCoord + 1, yCoord, zCoord);
+			break;
+			case 3:
+				transmitKinetic(xCoord, yCoord, zCoord + 1);
 			break;
 		}
 	}
 
+	private boolean canOutput() {
+		switch (worldObj.getBlockMetadata(xCoord, yCoord, zCoord)) {
+			case 4:
+				try {
+					((KineticEntity) worldObj.getTileEntity(xCoord - 1, yCoord, zCoord)).Recognition();
+					return true;
+				} catch (ClassCastException e) {
+					// TODO: handle exception
+				}
+			break;
+
+			case 1:
+				try {
+					((KineticEntity) worldObj.getTileEntity(xCoord, yCoord, zCoord - 1)).Recognition();
+					return true;
+				} catch (ClassCastException e) {
+					// TODO: handle exception
+				}
+			break;
+			case 2:
+				try {
+					((KineticEntity) worldObj.getTileEntity(xCoord + 1, yCoord, zCoord)).Recognition();
+					return true;
+				} catch (ClassCastException e) {
+					// TODO: handle exception
+				}
+			break;
+			case 3:
+				try {
+					((KineticEntity) worldObj.getTileEntity(xCoord, yCoord, zCoord + 1)).Recognition();
+					return true;
+				} catch (ClassCastException e) {
+					// TODO: handle exception
+				}
+			break;
+		}
+		return false;
+	}
+
 	private void transmitKinetic(int x, int y, int z) {
-		KineticEntity entity = ((KineticEntity) worldObj.getTileEntity(x, y, z));
-		entity.powerhas += GenerateSpeed;
+		try {
+			KineticEntity entity = ((KineticEntity) worldObj.getTileEntity(x, y, z));
+			entity.powerhas += GenerateSpeed;
+		} catch (ClassCastException e) {
+			// TODO: handle exception
+		}
 	}
 
 	/*private void detectOnLoad() {
