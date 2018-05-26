@@ -31,6 +31,10 @@ public class MaceratorCraftingRecipe {
 		        new Object[] { new ItemStack(SciRevolution.ore_copperblock, 1) }));
 		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.alpowder, 2),
 		        new Object[] { new ItemStack(SciRevolution.ore_alblock, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.tinpowder, 2),
+		        new Object[] { new ItemStack(SciRevolution.ore_tinblock, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.zincpowder, 2),
+		        new Object[] { new ItemStack(SciRevolution.ore_zincblock, 1) }));
 	}
 
 	public static ItemStack getOutput(ItemStack item) {

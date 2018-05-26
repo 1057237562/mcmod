@@ -198,17 +198,17 @@ public class SteamEngineEntity extends FunctionalEntity implements IInventory {
 
 	private void output() {
 		switch (worldObj.getBlockMetadata(xCoord, yCoord, zCoord)) {
-			case 4:
+			case 5:
 				transmitKinetic(xCoord - 1, yCoord, zCoord);
 			break;
 
-			case 1:
+			case 2:
 				transmitKinetic(xCoord, yCoord, zCoord - 1);
 			break;
-			case 2:
+			case 3:
 				transmitKinetic(xCoord + 1, yCoord, zCoord);
 			break;
-			case 3:
+			case 4:
 				transmitKinetic(xCoord, yCoord, zCoord + 1);
 			break;
 		}
@@ -216,36 +216,36 @@ public class SteamEngineEntity extends FunctionalEntity implements IInventory {
 
 	private boolean canOutput() {
 		switch (worldObj.getBlockMetadata(xCoord, yCoord, zCoord)) {
-			case 4:
+			case 5:
 				try {
 					((KineticEntity) worldObj.getTileEntity(xCoord - 1, yCoord, zCoord)).Recognition();
 					return true;
-				} catch (ClassCastException e) {
+				} catch (Exception e) {
 					// TODO: handle exception
 				}
 			break;
 
-			case 1:
+			case 2:
 				try {
 					((KineticEntity) worldObj.getTileEntity(xCoord, yCoord, zCoord - 1)).Recognition();
 					return true;
-				} catch (ClassCastException e) {
-					// TODO: handle exception
-				}
-			break;
-			case 2:
-				try {
-					((KineticEntity) worldObj.getTileEntity(xCoord + 1, yCoord, zCoord)).Recognition();
-					return true;
-				} catch (ClassCastException e) {
+				} catch (Exception e) {
 					// TODO: handle exception
 				}
 			break;
 			case 3:
 				try {
+					((KineticEntity) worldObj.getTileEntity(xCoord + 1, yCoord, zCoord)).Recognition();
+					return true;
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			break;
+			case 4:
+				try {
 					((KineticEntity) worldObj.getTileEntity(xCoord, yCoord, zCoord + 1)).Recognition();
 					return true;
-				} catch (ClassCastException e) {
+				} catch (Exception e) {
 					// TODO: handle exception
 				}
 			break;
@@ -257,7 +257,7 @@ public class SteamEngineEntity extends FunctionalEntity implements IInventory {
 		try {
 			KineticEntity entity = ((KineticEntity) worldObj.getTileEntity(x, y, z));
 			entity.powerhas += GenerateSpeed;
-		} catch (ClassCastException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}

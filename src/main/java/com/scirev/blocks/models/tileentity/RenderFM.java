@@ -2,6 +2,7 @@ package com.scirev.blocks.models.tileentity;
 
 import org.lwjgl.opengl.GL11;
 
+import com.scirev.blocks.container.functional.tileentity.ForgeMachineEntity;
 import com.scirev.blocks.models.ModelForgeMachine;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -23,13 +24,13 @@ public class RenderFM extends TileEntitySpecialRenderer {
 
 		//resourceLocation = new ResourceLocation(
 		//"scirev:textures/blocks/" + CableEntity.material[tile.getBlockMetadata()] + "cable.png");
-
 		GL11.glPushMatrix();
 		GL11.glTranslated(x + 0.5, y + 1.5, z + 0.5);
 		GL11.glRotated(180, 1d, 0, 0);
 		GL11.glRotated(tile.getBlockMetadata() * 90f, 0, 1, 0);
 		bindTexture(resourceLocation);
-		model.render(null, 0, 0, -0.1f, 0, 0, 0.0625f);
+		int progress = ((ForgeMachineEntity) tile).progress;
+		model.render(null, 0, 0, -0.1f, 0, 0, 0.0625f, (float) (progress * 7) / 800f);
 		GL11.glPopMatrix();
 	}
 }

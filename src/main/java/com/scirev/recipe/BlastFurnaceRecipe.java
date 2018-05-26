@@ -27,7 +27,7 @@ public class BlastFurnaceRecipe {
 
 	public static void registerRecipe() {
 		addRecipe(new AdvShapelessRecipe(new ItemStack(Items.iron_ingot, 1),
-		        new Object[] { new ItemStack(Blocks.iron_ore, 1), new ItemStack(SciRevolution.co, 1) }));
+		        new Object[] { new ItemStack(Blocks.iron_ore, 1), new ItemStack(SciRevolution.co, 2) }));
 		addRecipe(new AdvShapelessRecipe(new ItemStack(Items.iron_ingot, 1),
 		        new Object[] { new ItemStack(Blocks.iron_ore, 1), new ItemStack(Items.coal, 1) }));
 
@@ -37,9 +37,32 @@ public class BlastFurnaceRecipe {
 		        new Object[] { new ItemStack(SciRevolution.alpowder, 2), new ItemStack(Items.coal, 3) }));
 
 		addRecipe(new AdvShapelessRecipe(new ItemStack(Items.iron_ingot, 1),
-		        new Object[] { new ItemStack(SciRevolution.ironpowder, 1), new ItemStack(SciRevolution.co, 1) }));
+		        new Object[] { new ItemStack(SciRevolution.ironpowder, 1), new ItemStack(SciRevolution.co, 2) }));
 		addRecipe(new AdvShapelessRecipe(new ItemStack(Items.iron_ingot, 1),
 		        new Object[] { new ItemStack(SciRevolution.ironpowder, 1), new ItemStack(Items.coal, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.tin_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.ore_tinblock, 1), new ItemStack(SciRevolution.co, 2) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.tin_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.ore_tinblock, 1), new ItemStack(Items.coal, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.tin_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.tinpowder, 1), new ItemStack(SciRevolution.co, 2) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.tin_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.tinpowder, 1), new ItemStack(Items.coal, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.zinc_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.ore_zincblock, 1), new ItemStack(SciRevolution.co, 2) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.zinc_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.ore_zincblock, 1), new ItemStack(Items.coal, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.zinc_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.zincpowder, 1), new ItemStack(SciRevolution.co, 2) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.zinc_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.zincpowder, 1), new ItemStack(Items.coal, 1) }));
+
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.brass_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.copperingot, 1),
+		                new ItemStack(SciRevolution.zinc_ingot, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.bronze_ingot, 1),
+		        new Object[] { new ItemStack(SciRevolution.copperingot, 1),
+		                new ItemStack(SciRevolution.tin_ingot, 1) }));
 	}
 
 	public static ItemStack getOutput(ItemStack item, ItemStack item2) {

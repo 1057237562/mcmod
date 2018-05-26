@@ -1,0 +1,29 @@
+[20:18:29] [main/INFO]: Setting user: Player260
+[20:18:30] [Client thread/INFO]: LWJGL Version: 2.9.1
+[20:18:43] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[20:18:44] [Sound Library Loader/INFO]: Sound engine started
+[20:18:56] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[20:18:56] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[20:18:56] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[20:18:57] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[20:18:58] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[20:18:58] [Sound Library Loader/INFO]: Sound engine started
+[20:19:07] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[20:19:07] [Server thread/INFO]: Generating keypair
+[20:19:07] [Server thread/INFO]: Preparing start region for level 0
+[20:19:08] [Server thread/INFO]: Changing view distance to 8, from 10
+[20:19:09] [Server thread/INFO]: Player260[local:E:f9105e47] logged in with entity id 199 at (560.7494381865173, 7.872540826068933, 343.0742747371879)
+[20:19:09] [Server thread/INFO]: Player260 加入了游戏
+[20:19:20] [Server thread/INFO]: Player260 刚刚获得了 [打开物品栏] 成就！
+[20:19:20] [Client thread/INFO]: [CHAT] Player260 刚刚获得了 [打开物品栏] 成就！
+[20:28:09] [Server thread/INFO]: Saving and pausing game...
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[20:28:09] [Server thread/INFO]: Stopping server
+[20:28:09] [Server thread/INFO]: Saving players
+[20:28:09] [Server thread/INFO]: Saving worlds
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[20:28:09] [Server thread/INFO]: Saving chunks for level 'Test World'/The End
+[20:28:10] [Client thread/INFO]: Stopping!

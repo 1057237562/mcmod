@@ -7,10 +7,13 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 
 public class ForgeMachineEntity extends KineticEntity implements IInventory {
 
-	private ItemStack stack[] = new ItemStack[3];
+	private ItemStack stack[] = new ItemStack[2];
 	public int progress = 0;
 	private int powerneed = 8;
 
@@ -108,7 +111,9 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 				powerhas = 0;
 				if (canProgress()) {
 					progress++;
-					if (this.progress == 200) {
+					worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+					//markDirty();
+					if (this.progress == 50) {
 						makingItem();
 						progress = 0;
 					}
@@ -116,6 +121,8 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 					progress = 0;
 				}
 			}
+		} else {
+
 		}
 	}
 
@@ -126,22 +133,22 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 			ItemStack itemstack = ForgeMachineCraftingRecipe.getOutput(this.stack[0]);
 			if (itemstack == null)
 				return false;
-			if (this.stack[2] == null)
+			if (this.stack[1] == null)
 				return true;
-			if (!this.stack[2].isItemEqual(itemstack))
+			if (!this.stack[1].isItemEqual(itemstack))
 				return false;
-			int result = stack[2].stackSize + itemstack.stackSize;
-			return result <= getInventoryStackLimit() && result <= this.stack[2].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
+			int result = stack[1].stackSize + itemstack.stackSize;
+			return result <= getInventoryStackLimit() && result <= this.stack[1].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
 		}
 	}
 
 	private void makingItem() {
 		ItemStack itemstack = ForgeMachineCraftingRecipe.getOutput(this.stack[0]);
 
-		if (this.stack[2] == null) {
-			this.stack[2] = itemstack.copy();
-		} else if (this.stack[2].getItem() == itemstack.getItem()) {
-			this.stack[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
+		if (this.stack[1] == null) {
+			this.stack[1] = itemstack.copy();
+		} else if (this.stack[1].getItem() == itemstack.getItem()) {
+			this.stack[1].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
 		}
 
 		this.stack[0].stackSize -= ForgeMachineCraftingRecipe.getInputStack(this.stack[0]).stackSize;
@@ -180,5 +187,20 @@ public class ForgeMachineEntity extends KineticEntity implements IInventory {
 			}
 		}
 		par1NBTTagCompound.setTag("Items", var2);
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+		// TODO Auto-generated method stub
+		readFromNBT(pkt.func_148857_g());
+		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+	}
+
+	@Override
+	public Packet getDescriptionPacket() {
+		// TODO Auto-generated method stub
+		NBTTagCompound tagCompound = new NBTTagCompound();
+		this.writeToNBT(tagCompound);
+		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, zCoord, blockMetadata, tagCompound);
 	}
 }

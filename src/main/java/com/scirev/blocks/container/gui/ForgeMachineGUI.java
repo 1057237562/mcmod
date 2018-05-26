@@ -39,7 +39,7 @@ public class ForgeMachineGUI extends GuiContainer {
 		this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
 		int progress = tile.progress;
 		if (progress > 0) {
-			this.drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 14, (int) ((float) progress * 24 / 200), 16);
+			this.drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 14, (int) ((float) progress * 24 / 50), 16);
 		}
 	}
 }

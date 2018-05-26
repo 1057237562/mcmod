@@ -1,6 +1,8 @@
 ﻿[GENERAL ITEMS]
 tile.AluminumOre.name=铝矿石
 tile.CopperOre.name=铜矿石
+tile.TinOre.name=锡矿石
+tile.ZincOre.name=锌矿石
 tile.MagnetOre.name=磁铁矿
 tile.Generator.name=发电机
 tile.Macerator.name=打粉机
@@ -15,12 +17,16 @@ tile.GeneralLeaf.rubber.name=橡胶树叶
 tile.GeneralSapling.rubber.name=橡胶树苗
 tile.WoodenPipe.name=木导管
 tile.SteamEngine.name=蒸汽机
+tile.ForgeMachine.name=锻造厂
 
 item.AluminumIngot.name=铝锭
 item.CopperIngot.name=铜锭
+item.TinIngot.name=锡锭
+item.ZincIngot.name=锌锭
 item.CopperPlate.name=铜板
 item.AluminumPlate.name=铝板
 item.IronPlate.name=铁板
+item.SteelPlate.name=钢板
 item.CopperCable.name=铜线
 item.AluminumCable.name=铝线
 item.Magnet.name=磁铁
@@ -29,6 +35,8 @@ item.Hammer.name=锻造锤
 item.CarbonMonoxide.name=一氧化碳
 item.IronPowder.name=粉碎铁矿石
 item.CopperPowder.name=粉碎铜矿石
+item.TinPowder.name=粉碎锡矿石
+item.ZincPowder.name=粉碎锌矿石
 item.AluminumPowder.name=粉碎铝矿石
 item.Beaker.name=烧杯
 item.Beaker-H2O.name=H₂O烧杯
@@ -38,5 +46,8 @@ item.Battery.name=电池
 item.AluminumShell.name=铝壳
 item.IronShell.name=铁壳
 item.RawRubber.name=生橡胶
+item.MeltIron.name=熔融铁
+item.SteelIngot.name=钢锭
+item.Rubber.name=橡胶
 
 itemGroup.SciRevolution=工业革命

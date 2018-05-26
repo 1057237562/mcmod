@@ -1,0 +1,17 @@
+[14:40:54] [main/INFO]: Setting user: Player789
+[14:40:56] [Client thread/INFO]: LWJGL Version: 2.9.1
+[14:41:18] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[14:41:21] [Sound Library Loader/INFO]: Sound engine started
+[14:41:37] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[14:41:37] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[14:41:38] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Sci-Revolution
+[14:41:38] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[14:41:39] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[14:41:40] [Sound Library Loader/INFO]: Sound engine started
+[14:42:18] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[14:42:18] [Server thread/INFO]: Generating keypair
+[14:42:19] [Server thread/INFO]: Preparing start region for level 0
+[14:42:20] [Server thread/INFO]: Preparing spawn area: 73%
+[14:42:20] [Server thread/INFO]: Changing view distance to 8, from 10
+[14:42:21] [Server thread/INFO]: Player789[local:E:dddade23] logged in with entity id 179 at (566.3000000119209, 4.0, 344.73094755192795)
+[14:42:21] [Server thread/INFO]: Player789 加入了游戏

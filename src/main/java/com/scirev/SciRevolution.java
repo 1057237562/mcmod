@@ -7,6 +7,7 @@ import com.scirev.blocks.AluminumShellBlock;
 import com.scirev.blocks.AnvilBlock;
 import com.scirev.blocks.InsulationStone;
 import com.scirev.blocks.IronShellBlock;
+import com.scirev.blocks.SteamTrain;
 import com.scirev.blocks.container.functional.BlastFurnace;
 import com.scirev.blocks.container.functional.Bowl;
 import com.scirev.blocks.container.functional.Cable;
@@ -21,6 +22,7 @@ import com.scirev.blocks.container.functional.LathePowerSource;
 import com.scirev.blocks.container.functional.Macerator;
 import com.scirev.blocks.container.functional.SteamEngine;
 import com.scirev.blocks.container.functional.WoodenPipe;
+import com.scirev.blocks.container.functional.tileentity.AnvilEntity;
 import com.scirev.blocks.container.functional.tileentity.BlastFurnaceEntity;
 import com.scirev.blocks.container.functional.tileentity.BowlEntity;
 import com.scirev.blocks.container.functional.tileentity.CableEntity;
@@ -34,6 +36,7 @@ import com.scirev.blocks.container.functional.tileentity.LathePowerSourceEntity;
 import com.scirev.blocks.container.functional.tileentity.MaceratorTileEntity;
 import com.scirev.blocks.container.functional.tileentity.SteamEngineEntity;
 import com.scirev.blocks.container.functional.tileentity.WoodenPipeEntity;
+import com.scirev.blocks.fluid.OilFluid;
 import com.scirev.blocks.models.ModelForgeMachine;
 import com.scirev.blocks.models.ModelLatheBottomShell;
 import com.scirev.blocks.models.ModelLatheManipulatePanel;
@@ -57,8 +60,12 @@ import com.scirev.blocks.nature.SaplingItems;
 import com.scirev.blocks.ore.AluminumOre;
 import com.scirev.blocks.ore.CopperOre;
 import com.scirev.blocks.ore.MagnetOre;
-import com.scirev.blocks.ore.gen.OreGenerator;
-import com.scirev.blocks.ore.gen.TreeGenerator;
+import com.scirev.blocks.ore.TinOre;
+import com.scirev.blocks.ore.ZincOre;
+import com.scirev.entity.SteamTrainEntity;
+import com.scirev.gen.OreGenerator;
+import com.scirev.gen.TreeGenerator;
+import com.scirev.handler.EventHandlers;
 import com.scirev.items.BowlItem;
 import com.scirev.items.CableItem;
 import com.scirev.items.render.GenericItemRenderer;
@@ -77,12 +84,14 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.ExistingSubstitutionException;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.Type;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -93,6 +102,9 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.RecipeSorter;
 
@@ -134,6 +146,10 @@ public class SciRevolution {
 	        .setBlockTextureName("scirev:ore_aluminum").setHardness(2f);
 	public static Block ore_magblock = new MagnetOre(Material.rock).setBlockName("MagnetOre")
 	        .setBlockTextureName("scirev:ore_magnet").setHardness(2f);
+	public static Block ore_tinblock = new TinOre(Material.rock).setBlockName("TinOre")
+	        .setBlockTextureName("scirev:ore_tin").setHardness(2f);
+	public static Block ore_zincblock = new ZincOre(Material.rock).setBlockName("ZincOre")
+	        .setBlockTextureName("scirev:ore_zinc").setHardness(2f);
 	public static Cable cable = new Cable();
 
 	public static Block insulationstone = new InsulationStone().setBlockName("InsulationStone").setHardness(1.5f)
@@ -154,16 +170,27 @@ public class SciRevolution {
 	public static Block norubberlog = new CutRubberLog(false).setBlockName("NoRubberLog").setHardness(0.5f);
 	public static Block woodenpipe = new WoodenPipe().setBlockName("WoodenPipe").setHardness(0.5f);
 	public static Block bowl = new Bowl().setBlockName("Bowl").setHardness(0.5f);
-	public static Block anvil = new AnvilBlock().setBlockName("anvil").setHardness(0.5f);
+	public static Block anvil = new AnvilBlock().setBlockName("anvil").setHardness(5.0F)
+	        .setStepSound(Block.soundTypeAnvil)
+	        .setResistance(2000.0F).setBlockName("anvil");
+	public static Block steamtrain = new SteamTrain().setBlockName("SteamTrain");
 	//Items
 	public static Item alingot = new Item().setUnlocalizedName("AluminumIngot").setTextureName("scirev:aluminum_ingot");
 	public static Item copperingot = new Item().setUnlocalizedName("CopperIngot").setTextureName("scirev:copper_ingot");
 	public static Item magnet = new Item().setUnlocalizedName("Magnet").setTextureName("scirev:magnet");
+	public static Item tin_ingot = new Item().setUnlocalizedName("TinIngot").setTextureName("scirev:tin_ingot");
+	public static Item zinc_ingot = new Item().setUnlocalizedName("ZincIngot").setTextureName("scirev:zinc_ingot");
 	public static Item steel_ingot = new Item().setUnlocalizedName("SteelIngot").setTextureName("scirev:steel_ingot");
+	public static Item bronze_ingot = new Item().setUnlocalizedName("BronzeIngot")
+	        .setTextureName("scirev:bronze_ingot");
+	public static Item brass_ingot = new Item().setUnlocalizedName("BrassIngot").setTextureName("scirev:brass_ingot");
+	public static Item brass_tank = new Item().setUnlocalizedName("BrassTank").setTextureName("scirev:brass_tank");
 
 	public static Item ironpowder = new Item().setUnlocalizedName("IronPowder").setTextureName("scirev:ironpowder");
 	public static Item copperpowder = new Item().setUnlocalizedName("CopperPowder")
 	        .setTextureName("scirev:copperpowder");
+	public static Item tinpowder = new Item().setUnlocalizedName("TinPowder").setTextureName("scirev:tinpowder");
+	public static Item zincpowder = new Item().setUnlocalizedName("ZincPowder").setTextureName("scirev:zincpowder");
 	public static Item alpowder = new Item().setUnlocalizedName("AluminumPowder").setTextureName("scirev:alpowder");
 	public static Item meltiron = new Item().setUnlocalizedName("MeltIron").setTextureName("scirev:meltiron");
 
@@ -174,6 +201,7 @@ public class SciRevolution {
 	public static Item bt = new Item().setUnlocalizedName("Battery").setTextureName("scirev:battery");
 
 	public static Item copperplate = new Item().setUnlocalizedName("CopperPlate").setTextureName("scirev:copper_plate");
+	public static Item brass_plate = new Item().setUnlocalizedName("BrassPlate").setTextureName("scirev:brass_plate");
 	public static Item alplate = new Item().setUnlocalizedName("AluminumPlate").setTextureName("scirev:aluminum_plate");
 	public static Item ironplate = new Item().setUnlocalizedName("IronPlate").setTextureName("scirev:iron_plate");
 	public static Item steelplate = new Item().setUnlocalizedName("SteelPlate").setTextureName("scirev:steel_plate");
@@ -195,6 +223,10 @@ public class SciRevolution {
 	        .setTextureName("scirev:cutting_pincer").setMaxDamage(80).setMaxStackSize(1);
 	public static CraftiveItem hammer = (CraftiveItem) new CraftiveItem().setUnlocalizedName("Hammer")
 	        .setTextureName("scirev:hammer").setMaxDamage(120).setMaxStackSize(1);
+
+	//Fluid
+	public static Fluid oil = new Fluid("oil");
+	public static Block oil_block;
 
 	//Replace Item
 	public static Item itembowl = new BowlItem(bowl).setUnlocalizedName("bowl").setTextureName("minecraft:bowl")
@@ -221,6 +253,8 @@ public class SciRevolution {
 
 		//Sets
 		ore_copperblock.setCreativeTab(scirevCTab);
+		ore_tinblock.setCreativeTab(scirevCTab);
+		ore_zincblock.setCreativeTab(scirevCTab);
 		ore_alblock.setCreativeTab(scirevCTab);
 		ore_magblock.setCreativeTab(scirevCTab);
 		se.setCreativeTab(scirevCTab);
@@ -237,7 +271,11 @@ public class SciRevolution {
 		alingot.setCreativeTab(scirevCTab);
 		copperingot.setCreativeTab(scirevCTab);
 		magnet.setCreativeTab(scirevCTab);
+		tin_ingot.setCreativeTab(scirevCTab);
+		zinc_ingot.setCreativeTab(scirevCTab);
 		steel_ingot.setCreativeTab(scirevCTab);
+		brass_ingot.setCreativeTab(scirevCTab);
+		bronze_ingot.setCreativeTab(scirevCTab);
 
 		copperplate.setCreativeTab(scirevCTab);
 		alplate.setCreativeTab(scirevCTab);
@@ -245,8 +283,11 @@ public class SciRevolution {
 		alplate.setCreativeTab(scirevCTab);
 		ironplate.setCreativeTab(scirevCTab);
 		steelplate.setCreativeTab(scirevCTab);
+		brass_plate.setCreativeTab(scirevCTab);
 		alshell.setCreativeTab(scirevCTab);
 		ironshell.setCreativeTab(scirevCTab);
+
+		brass_tank.setCreativeTab(scirevCTab);
 
 		coppercable.setCreativeTab(scirevCTab);
 		alcable.setCreativeTab(scirevCTab);
@@ -261,6 +302,8 @@ public class SciRevolution {
 		ironpowder.setCreativeTab(scirevCTab);
 		copperpowder.setCreativeTab(scirevCTab);
 		alpowder.setCreativeTab(scirevCTab);
+		tinpowder.setCreativeTab(scirevCTab);
+		zincpowder.setCreativeTab(scirevCTab);
 		meltiron.setCreativeTab(scirevCTab);
 
 		co.setCreativeTab(scirevCTab);
@@ -279,9 +322,15 @@ public class SciRevolution {
 
 		woodenpipe.setCreativeTab(scirevCTab);
 
+		//Fluid
+		FluidRegistry.registerFluid(oil);
+		oil_block = new OilFluid().setBlockName("Oil");
+
 		//Registry
 		GameRegistry.registerBlock(ore_copperblock, ore_copperblock.getUnlocalizedName());
+		GameRegistry.registerBlock(ore_tinblock, ore_tinblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_alblock, ore_alblock.getUnlocalizedName());
+		GameRegistry.registerBlock(ore_zincblock, ore_zincblock.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_magblock, ore_magblock.getUnlocalizedName());
 		GameRegistry.registerBlock(se, se.getUnlocalizedName());
 		GameRegistry.registerBlock(fm, fm.getUnlocalizedName());
@@ -295,6 +344,7 @@ public class SciRevolution {
 		GameRegistry.registerBlock(lit_ef, lit_ef.getUnlocalizedName());
 		GameRegistry.registerBlock(bf, bf.getUnlocalizedName());
 		GameRegistry.registerBlock(lit_bf, lit_bf.getUnlocalizedName());
+		GameRegistry.registerBlock(steamtrain, steamtrain.getUnlocalizedName());
 		GameRegistry.registerBlock(lbs, lbs.getUnlocalizedName());
 		GameRegistry.registerBlock(lmp, lmp.getUnlocalizedName());
 		GameRegistry.registerBlock(lps, lps.getUnlocalizedName());
@@ -307,6 +357,8 @@ public class SciRevolution {
 		GameRegistry.registerBlock(generalleave, LeafItems.class, generalleave.getUnlocalizedName());
 		GameRegistry.registerBlock(generalsapling, SaplingItems.class, generalsapling.getUnlocalizedName());
 
+		GameRegistry.registerBlock(oil_block, oil_block.getUnlocalizedName());
+
 		GameRegistry.registerBlock(cutrubberlog, cutrubberlog.getUnlocalizedName());
 		GameRegistry.registerBlock(norubberlog, norubberlog.getUnlocalizedName());
 		GameRegistry.registerBlock(woodenpipe, woodenpipe.getUnlocalizedName());
@@ -315,10 +367,17 @@ public class SciRevolution {
 		GameRegistry.registerItem(alingot, alingot.getUnlocalizedName());
 		GameRegistry.registerItem(copperingot, copperingot.getUnlocalizedName());
 		GameRegistry.registerItem(magnet, magnet.getUnlocalizedName());
+		GameRegistry.registerItem(tin_ingot, tin_ingot.getUnlocalizedName());
+		GameRegistry.registerItem(zinc_ingot, zinc_ingot.getUnlocalizedName());
 		GameRegistry.registerItem(steel_ingot, steel_ingot.getUnlocalizedName());
+		GameRegistry.registerItem(brass_ingot, brass_ingot.getUnlocalizedName());
+		GameRegistry.registerItem(bronze_ingot, bronze_ingot.getUnlocalizedName());
+		GameRegistry.registerItem(brass_tank, brass_tank.getUnlocalizedName());
 
 		GameRegistry.registerItem(ironpowder, ironpowder.getUnlocalizedName());
 		GameRegistry.registerItem(copperpowder, copperpowder.getUnlocalizedName());
+		GameRegistry.registerItem(tinpowder, tinpowder.getUnlocalizedName());
+		GameRegistry.registerItem(zincpowder, zincpowder.getUnlocalizedName());
 		GameRegistry.registerItem(alpowder, alpowder.getUnlocalizedName());
 		GameRegistry.registerItem(meltiron, meltiron.getUnlocalizedName());
 
@@ -332,6 +391,7 @@ public class SciRevolution {
 		GameRegistry.registerItem(alplate, alplate.getUnlocalizedName());
 		GameRegistry.registerItem(ironplate, ironplate.getUnlocalizedName());
 		GameRegistry.registerItem(steelplate, steelplate.getUnlocalizedName());
+		GameRegistry.registerItem(brass_plate, brass_plate.getUnlocalizedName());
 		GameRegistry.registerItem(alshell, alshell.getUnlocalizedName());
 		GameRegistry.registerItem(ironshell, ironshell.getUnlocalizedName());
 
@@ -367,6 +427,7 @@ public class SciRevolution {
 
 		GameRegistry.addSmelting(Items.coal, new ItemStack(co, 4), 0.3f);
 		GameRegistry.addSmelting(rawrubber, new ItemStack(rubber, 1), 0.3f);
+		GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(meltiron), 0.2f);
 
 		GameRegistry.addShapedRecipe(new ItemStack(cp),
 		        new Object[] { "1 1", " 1 ", "2 2", '1', Items.iron_ingot, '2', Items.stick });
@@ -396,6 +457,7 @@ public class SciRevolution {
 		        new Object[] { " 1 ", "232", " 3 ", '1', Items.coal, '2', alplate, '3', Items.redstone });
 		GameRegistry.addShapedRecipe(new ItemStack(woodenpipe),
 		        new Object[] { "   ", "1 1", "111", '1', Blocks.planks });
+		GameRegistry.addShapedRecipe(new ItemStack(brass_tank), new Object[] { " 1 ", "1 1", " 1 ", '1', brass_plate });
 
 		RecipeSorter.register("scirev:shaped", AdvRecipe.class, RecipeSorter.Category.SHAPED,
 		        "after:minecraft:shapeless");
@@ -407,6 +469,8 @@ public class SciRevolution {
 		GameRegistry.addShapelessRecipe(new ItemStack(alplate), alingot,
 		        new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(ironplate), Items.iron_ingot,
+		        new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(brass_plate), brass_ingot,
 		        new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE));
 
 		GameRegistry.addShapelessRecipe(new ItemStack(gb), Blocks.glass, Blocks.glass);
@@ -430,8 +494,10 @@ public class SciRevolution {
 		GameRegistry.registerTileEntity(BowlEntity.class, "BowlEntity");
 		GameRegistry.registerTileEntity(SteamEngineEntity.class, "SteamEngineEntity");
 		GameRegistry.registerTileEntity(ForgeMachineEntity.class, "ForgeMachineEntity");
+		GameRegistry.registerTileEntity(AnvilEntity.class, "AnvilEntity");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
+		MinecraftForge.EVENT_BUS.register(new EventHandlers());
 
 		GameRegistry.registerWorldGenerator(new OreGenerator(), 0);
 		GameRegistry.registerWorldGenerator(new TreeGenerator(), 1);
@@ -463,11 +529,23 @@ public class SciRevolution {
 		removeSmelt(Blocks.iron_ore);
 
 		removeCrafting(Blocks.golden_rail);
+		removeCrafting(Blocks.iron_block);
+		removeCrafting(new ItemStack(Items.iron_ingot, 9));
+		removeCrafting(new ItemStack(Items.furnace_minecart));
+
+		//Customize
+		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(Blocks.iron_block)),
+		        new Object[] { "11", "11", '1', Items.iron_ingot });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.iron_ingot, 4), Item.getItemFromBlock(Blocks.iron_block));
 
 		MaceratorCraftingRecipe.registerRecipe();
 		BlastFurnaceRecipe.registerRecipe();
 		ExtrusionerCraftingRecipe.registerRecipe();
 		ForgeMachineCraftingRecipe.registerRecipe();
+
+		// Entity
+
+		registerNewEntity(SteamTrainEntity.class, "SteamTrain");
 
 	}
 
@@ -492,17 +570,17 @@ public class SciRevolution {
 	}
 
 	public static void removeCrafting(Block object) {
-		removeCrafting(Item.getItemFromBlock(object));
+		removeCrafting(new ItemStack(Item.getItemFromBlock(object)));
 	}
 
-	public static void removeCrafting(Item target) {
+	public static void removeCrafting(ItemStack target) {
 		ArrayList<Object> needRemove = new ArrayList<Object>();
 		@SuppressWarnings({ "rawtypes" })
 		List list = CraftingManager.getInstance().getRecipeList();
 		for (int i = 0; i < list.size(); i++) {
 			try {
-				Item oItem = ((IRecipe) list.get(i)).getRecipeOutput().getItem();
-				if (oItem.equals(target)) {
+				ItemStack oItem = ((IRecipe) list.get(i)).getRecipeOutput();
+				if (oItem.getItem().equals(target.getItem()) && oItem.stackSize == target.stackSize) {
 					needRemove.add(list.get(i));
 				}
 			} catch (Exception e) {
@@ -519,4 +597,13 @@ public class SciRevolution {
 	public static void removeSmelt(Block object) {
 		removeSmelt(Item.getItemFromBlock(object));
 	}
+
+	public static int registerNewEntity(Class<? extends Entity> entityclass, String entityName) {
+		int randomId = EntityRegistry.findGlobalUniqueEntityId();
+		EntityRegistry.registerGlobalEntityID(entityclass, entityName, randomId);
+		EntityRegistry.registerModEntity(entityclass, entityName, randomId, MODID, 64, 1, true);
+
+		return randomId;
+	}
+
 }

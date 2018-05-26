@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.scirev.SciRevolution;
-import com.scirev.blocks.ore.gen.WorldGenRubberTree;
+import com.scirev.gen.WorldGenRubberTree;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

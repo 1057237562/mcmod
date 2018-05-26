@@ -3,6 +3,7 @@ package com.scirev.blocks.container.functional.container;
 import java.util.Iterator;
 
 import com.scirev.blocks.container.functional.tileentity.ForgeMachineEntity;
+import com.scirev.recipe.ForgeMachineCraftingRecipe;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,7 +13,6 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntityFurnace;
 
 public class ForgeMachineContainer extends Container {
 
@@ -21,7 +21,7 @@ public class ForgeMachineContainer extends Container {
 
 	public ForgeMachineContainer(InventoryPlayer par1InventoryPlayer, ForgeMachineEntity entity) {
 		// TODO Auto-generated constructor stub
-		addSlotToContainer(new Slot(entity, 0, 56, 35));
+		addSlotToContainer(new Slot(entity, 0, 56, 36));
 		addSlotToContainer(new Slot(entity, 1, 116, 35));
 
 		tile = entity;
@@ -58,14 +58,14 @@ public class ForgeMachineContainer extends Container {
 		if (var4 != null && var4.getHasStack()) {
 			ItemStack var5 = var4.getStack();
 			var3 = var5.copy();
-			if (par2 == 0) {
-				if (!this.mergeItemStack(var5, 1, 37, false)) {
+			if (par2 >= 0 && par2 <= 2) {
+				if (!this.mergeItemStack(var5, 2, 38, false)) {
 					return null;
 				}
 				var4.onSlotChange(var5, var3);
-			} else if (par2 >= 1 && par2 < 37) {
-				if (TileEntityFurnace.isItemFuel(var5)) {
-					if (!this.mergeItemStack(var5, 0, 1, false)) {
+			} else if (par2 >= 3 && par2 < 39) {
+				if (ForgeMachineCraftingRecipe.isRecipeItem(var5.getItem())) {
+					if (!this.mergeItemStack(var5, 0, 3, false)) {
 						return null;
 					}
 				}
