@@ -49,5 +49,15 @@ item.RawRubber.name=生橡胶
 item.MeltIron.name=熔融铁
 item.SteelIngot.name=钢锭
 item.Rubber.name=橡胶
+item.Bronze_Axe.name=青铜斧
+item.Bronze_Sword.name=青铜剑
+item.Bronze_Shovel.name=青铜铲
+item.Bronze_Pickaxe.name=青铜镐
+item.Bronze_Hoe.name=青铜锄
+item.Steel_Axe.name=钢斧
+item.Steel_Sword.name=钢剑
+item.Steel_Shovel.name=钢铲
+item.Steel_Pickaxe.name=钢镐
+item.Steel_Hoe.name=钢锄
 
 itemGroup.SciRevolution=工业革命

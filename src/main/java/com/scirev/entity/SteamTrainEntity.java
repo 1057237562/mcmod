@@ -4,7 +4,7 @@ import com.scirev.SciRevolution;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityMinecartFurnace;
+import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
@@ -13,11 +13,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.minecart.MinecartInteractEvent;
 
-public class SteamTrainEntity extends EntityMinecartFurnace implements IInventory {
+public class SteamTrainEntity extends EntityMinecart implements IInventory {
 
 	private ItemStack[] minecartContainerItems = new ItemStack[1];
 	private boolean dropContentsWhenDead = true;
@@ -32,22 +33,45 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 	int Ticks = 0;
 	public double propsalpushX;
 	public double propsalpushZ;
+	public double pushX;
+	public double pushZ;
 	private final float speed = 8f;
+	private boolean transmitted = false;
 
 	public SteamTrainEntity(World p_i1718_1_) {
 		super(p_i1718_1_);
 		// TODO Auto-generated constructor stub
 	}
 
-	public SteamTrainEntity(World p_i1719_1_, double p_i1719_2_, double p_i1719_4_, double p_i1719_6_)
-    {
-        super(p_i1719_1_, p_i1719_2_, p_i1719_4_, p_i1719_6_);
-    }
+	public SteamTrainEntity(World p_i1719_1_, double p_i1719_2_, double p_i1719_4_, double p_i1719_6_) {
+		super(p_i1719_1_, p_i1719_2_, p_i1719_4_, p_i1719_6_);
+	}
 
 	@Override
 	public int getMinecartType() {
 		// TODO Auto-generated method stub
-		return 2;
+		return 4;
+	}
+
+	@Override
+	protected void entityInit() {
+		// TODO Auto-generated method stub
+		super.entityInit();
+		this.dataWatcher.addObject(16, new Byte((byte) 0));
+	}
+
+	@Override
+	public boolean isPoweredCart() {
+		// TODO Auto-generated method stub
+		return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+	}
+
+	protected void setMinecartPowered(boolean p_94107_1_) {
+		if (p_94107_1_) {
+			this.dataWatcher.updateObject(16, Byte.valueOf((byte) (this.dataWatcher.getWatchableObjectByte(16) | 1)));
+		} else {
+			this.dataWatcher.updateObject(16, Byte.valueOf((byte) (this.dataWatcher.getWatchableObjectByte(16) & -2)));
+		}
 	}
 
 	@Override
@@ -62,6 +86,7 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 			return true;
 		this.propsalpushX = Math.signum(this.posX - player.posX);
 		this.propsalpushZ = Math.signum(this.posZ - player.posZ);
+		transmitted = false;
 		return true;
 	}
 
@@ -251,8 +276,11 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 	 * (abstract) Protected helper method to write subclass entity data to NBT.
 	 */
 	protected void writeEntityToNBT(NBTTagCompound p_70014_1_) {
+		p_70014_1_.setBoolean("Transmit", this.transmitted);
 		p_70014_1_.setDouble("PropX", this.propsalpushX);
 		p_70014_1_.setDouble("PropZ", this.propsalpushZ);
+		p_70014_1_.setDouble("PushX", this.pushX);
+		p_70014_1_.setDouble("PushZ", this.pushZ);
 		p_70014_1_.setShort("generatorBurnTime", (short) this.generatorBurnTime);
 		p_70014_1_.setShort("maxBurnTime", (short) this.maxBurnTime);
 		p_70014_1_.setShort("water", (short) this.waterstorage);
@@ -293,6 +321,9 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 		this.waterstorage = p_70037_1_.getShort("water");
 		this.propsalpushX = p_70037_1_.getDouble("PropX");
 		this.propsalpushZ = p_70037_1_.getDouble("PropZ");
+		this.pushX = p_70037_1_.getDouble("PushX");
+		this.pushZ = p_70037_1_.getDouble("PushZ");
+		this.transmitted = p_70037_1_.getBoolean("Transmit");
 	}
 
 	@Override
@@ -312,24 +343,24 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 				if (Ticks == 4) {
 					if (waterstorage != 0) {
 						waterstorage--;
-						this.pushX = (Math.signum(propsalpushX) * 7 + Math.signum(motionX));
-						this.pushZ = (Math.signum(propsalpushZ) * 7 + Math.signum(motionZ));
-						motionX += pushX;
-						motionZ += pushZ;
-						motionX *= speed;
-						motionZ *= speed;
-						propsalpushX = propsalpushZ = 0;
-
+						if (!transmitted) {
+							pushX = Math.signum(propsalpushX);
+							pushZ = Math.signum(propsalpushZ);
+							transmitted = true;
+						}
+					}else {
+						pushX = pushZ = 0D;
 					}
 					Ticks = 0;
 				} else {
 					Ticks++;
 				}
 			} else {
-				this.pushX = this.pushZ = 0.0D;
+				pushX = pushZ = 0D;
 				ItemStack burnItem = getStackInSlot(0);
 				int getBurnTime = TileEntityFurnace.getItemBurnTime(burnItem);
 				if (getBurnTime > 0 && waterstorage > 0) {
+					transmitted = false;
 					maxBurnTime = getBurnTime;
 					generatorBurnTime = getBurnTime;
 					if (burnItem.getItem() == Items.lava_bucket) {
@@ -351,5 +382,55 @@ public class SteamTrainEntity extends EntityMinecartFurnace implements IInventor
 				this.worldObj.spawnParticle("largesmoke", this.posX, this.posY + 0.8D, this.posZ, 0.0D, 0.0D, 0.0D);
 			}
 		}
+	}
+
+	@Override
+	protected void applyDrag() {
+		double d0 = this.pushX * this.pushX + this.pushZ * this.pushZ;
+
+		if (d0 > 0) {
+			d0 = (double) MathHelper.sqrt_double(d0);
+			this.pushX /= d0;
+			this.pushZ /= d0;
+			double d1 = 0.05D * speed;
+			this.motionX *= 0.800000011920929D;
+			this.motionY *= 0.0D;
+			this.motionZ *= 0.800000011920929D;
+			this.motionX += this.pushX * d1;
+			this.motionZ += this.pushZ * d1;
+		} else {
+			this.motionX *= 0.9800000190734863D;
+			this.motionY *= 0.0D;
+			this.motionZ *= 0.9800000190734863D;
+		}
+
+		super.applyDrag();
+	}
+
+	@Override
+	protected void func_145821_a(int p_145821_1_, int p_145821_2_, int p_145821_3_, double p_145821_4_,
+	        double p_145821_6_, Block p_145821_8_, int p_145821_9_) {
+		super.func_145821_a(p_145821_1_, p_145821_2_, p_145821_3_, p_145821_4_, p_145821_6_, p_145821_8_, p_145821_9_);
+		double d2 = this.pushX * this.pushX + this.pushZ * this.pushZ;
+
+		if (d2 > 1.0E-4D && this.motionX * this.motionX + this.motionZ * this.motionZ > 0.001D) {
+			d2 = (double) MathHelper.sqrt_double(d2);
+			this.pushX /= d2;
+			this.pushZ /= d2;
+
+			if (this.pushX * this.motionX + this.pushZ * this.motionZ < 0.0D) {
+				this.pushX = 0.0D;
+				this.pushZ = 0.0D;
+			} else {
+				this.pushX = this.motionX;
+				this.pushZ = this.motionZ;
+			}
+		}
+	}
+
+	@Override
+	public int getDefaultDisplayTileData() {
+		// TODO Auto-generated method stub
+		return 2;
 	}
 }

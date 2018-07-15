@@ -28,9 +28,9 @@ public class RubberEntity extends TileEntity {
 	@Override
 	public void writeToNBT(NBTTagCompound nbtTag) {
 		// TODO Auto-generated method stub
-		super.writeToNBT(nbtTag);
 		nbtTag.setShort("remains", (short) rubberRemains);
 		nbtTag.setShort("regenerateTicks", (short) regenerateTicks);
+		super.writeToNBT(nbtTag);
 	}
 
 	@Override

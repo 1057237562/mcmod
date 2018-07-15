@@ -1,6 +1,6 @@
 package com.scirev.blocks.container.functional;
 
-import javax.vecmath.Vector3d;
+import java.util.Random;
 
 import com.scirev.SciRevolution;
 import com.scirev.blocks.container.functional.tileentity.CableEntity;
@@ -17,7 +17,6 @@ import net.minecraft.world.World;
 
 public class Cable extends BlockContainer {
 
-	Vector3d vector3d = new Vector3d();
 	public int meta = 0;
 
 	public Cable() {
@@ -107,7 +106,14 @@ public class Cable extends BlockContainer {
 		return meta == 1 ? SciRevolution.alcable : meta == 2 ? SciRevolution.coppercable : null;
 	}
 
+	@Override
+	public int quantityDropped(Random p_149745_1_) {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
 	public int quantityDropped() {
+		// TODO Auto-generated method stub
 		return 1;
 	}
 

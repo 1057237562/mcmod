@@ -11,9 +11,9 @@ import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
@@ -48,9 +48,7 @@ public class GeneralLog extends BlockLog {
 		if (player.getHeldItem() != null) {
 			switch (world.getBlockMetadata(x, y, z)) {
 				case 0:
-					if (player.getHeldItem().getItem() == Items.wooden_sword
-					        || player.getHeldItem().getItem() == Items.stone_sword
-					        || player.getHeldItem().getItem() == Items.iron_sword) {
+					if (player.getHeldItem().getItem() instanceof ItemSword) {
 						world.setBlock(x, y, z, SciRevolution.cutrubberlog);
 						((CutRubberLog) world.getBlock(x, y, z)).onBlockPlacedBy(world, x, y, z, player, null);
 						player.getHeldItem().setItemDamage(player.getHeldItem().getItemDamage() + 1);

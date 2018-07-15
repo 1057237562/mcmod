@@ -28,7 +28,6 @@ public class AnvilBlock extends BlockAnvil implements ITileEntityProvider {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_,
 	        float p_149727_7_, float p_149727_8_, float p_149727_9_) {
 		// TODO Auto-generated method stub
-
 		if (player.isSneaking()) {
 			player.openGui(SciRevolution.instance, 8, world, x, y, z);
 			return true;
