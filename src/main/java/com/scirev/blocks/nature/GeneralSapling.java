@@ -47,9 +47,8 @@ public class GeneralSapling extends BlockSapling {
 	 * Gets the block's texture. Args: side, meta
 	 */
 	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
-		p_149691_2_ &= 7;
-		return icons[MathHelper.clamp_int(p_149691_2_, 0, 5)];
+	public IIcon getIcon(int side, int meta) {
+		return icons[MathHelper.clamp_int(meta, 0, icons.length - 1)];
 	}
 
 	public void func_149879_c(World p_149879_1_, int p_149879_2_, int p_149879_3_, int p_149879_4_,

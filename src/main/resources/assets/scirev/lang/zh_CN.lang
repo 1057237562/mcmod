@@ -59,5 +59,10 @@ item.Steel_Sword.name=钢剑
 item.Steel_Shovel.name=钢铲
 item.Steel_Pickaxe.name=钢镐
 item.Steel_Hoe.name=钢锄
+item.Flint_Axe.name=燧石斧
+item.Flint_Sword.name=燧石剑
+item.Flint_Shovel.name=燧石铲
+item.Flint_Pickaxe.name=燧石镐
+item.Flint_Hoe.name=燧石锄
 
 itemGroup.SciRevolution=工业革命

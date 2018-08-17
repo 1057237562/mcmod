@@ -25,7 +25,7 @@ public class GeneralSword extends ItemSword {
 
 	public GeneralSword registerCraftingReceipe(Item material) {
 		GameRegistry.addShapedRecipe(new ItemStack(this),
-		        new Object[] { " # ", " # ", " * ", '#', material, '*', Items.stick });
+		        new Object[] { "#", "#", "*", '#', material, '*', Items.stick });
 		return this;
 	}
 }

@@ -26,6 +26,8 @@ public class ForgeMachineCraftingRecipe {
 	public static void registerRecipe() {
 		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.steel_ingot, 1),
 		        new Object[] { new ItemStack(SciRevolution.meltiron, 1) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.steelplate, 1),
+		        new Object[] { new ItemStack(SciRevolution.steel_ingot, 1) }));
 	}
 
 	public static ItemStack getOutput(ItemStack item) {

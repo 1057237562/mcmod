@@ -7,6 +7,8 @@ import com.scirev.blocks.AluminumShellBlock;
 import com.scirev.blocks.AnvilBlock;
 import com.scirev.blocks.InsulationStone;
 import com.scirev.blocks.IronShellBlock;
+import com.scirev.blocks.NewLeavesBlock;
+import com.scirev.blocks.OldLeavesBlock;
 import com.scirev.blocks.SteamTrain;
 import com.scirev.blocks.container.functional.BlastFurnace;
 import com.scirev.blocks.container.functional.Bowl;
@@ -66,6 +68,7 @@ import com.scirev.recipe.BlastFurnaceRecipe;
 import com.scirev.recipe.ExtrusionerCraftingRecipe;
 import com.scirev.recipe.ForgeMachineCraftingRecipe;
 import com.scirev.recipe.MaceratorCraftingRecipe;
+import com.scirev.recipe.VanillaRecipe;
 import com.scirev.vanilla.Replace;
 
 import cpw.mods.fml.common.Mod;
@@ -78,6 +81,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -233,6 +237,16 @@ public class SciRevolution {
 	public static Item steelshovel = new GeneralShovel(steel).registerCraftingReceipe(steel_ingot)
 	        .setUnlocalizedName("Steel_Shovel").setTextureName("scirev:tools/steel_shovel");
 
+	public static final ToolMaterial flint = EnumHelper.addToolMaterial("Flint", 0, 30, 2.0F, 0F, 7);
+	public static Item flintaxe = new GeneralAxe(flint).setUnlocalizedName("Flint_Axe")
+	        .setTextureName("scirev:tools/flint_axe");
+	public static Item flintpick = new GeneralPickaxe(flint).setUnlocalizedName("Flint_Pickaxe")
+	        .setTextureName("scirev:tools/flint_pickaxe");
+	public static Item flinthoe = new GeneralHoe(flint).setUnlocalizedName("Flint_Hoe")
+	        .setTextureName("scirev:tools/flint_hoe");
+	public static Item flintsword = new GeneralSword(flint).setUnlocalizedName("Flint_Sword")
+	        .setTextureName("scirev:tools/flint_sword");
+
 	public static CraftiveItem cp = (CraftiveItem) new CraftiveItem().setUnlocalizedName("CuttingPincer")
 	        .setTextureName("scirev:cutting_pincer").setMaxDamage(80).setMaxStackSize(1);
 	public static CraftiveItem hammer = (CraftiveItem) new CraftiveItem().setUnlocalizedName("Hammer")
@@ -245,6 +259,9 @@ public class SciRevolution {
 	//Replace Item
 	public static Item itembowl = new BowlItem(bowl).setUnlocalizedName("bowl").setTextureName("minecraft:bowl");//.setCreativeTab(CreativeTabs.tabMaterials)
 	public static Item itemanvil = new ItemAnvilBlock(anvil).setUnlocalizedName("anvil");
+
+	public static BlockLeaves leaves = new OldLeavesBlock();
+	public static BlockLeaves leaves2 = new NewLeavesBlock();
 
 	public static CreativeTabs scirevCTab = new CreativeTabs("SciRevolution") {
 		@Override
@@ -346,6 +363,11 @@ public class SciRevolution {
 		steelpick.setCreativeTab(scirevCTab);
 		steelshovel.setCreativeTab(scirevCTab);
 		steelsword.setCreativeTab(scirevCTab);
+
+		flintaxe.setCreativeTab(scirevCTab);
+		flinthoe.setCreativeTab(scirevCTab);
+		flintpick.setCreativeTab(scirevCTab);
+		flintsword.setCreativeTab(scirevCTab);
 
 		//anvil.setCreativeTab(CreativeTabs.tabDecorations);
 		//itembowl.setCreativeTab(CreativeTabs.tabMaterials);
@@ -454,6 +476,11 @@ public class SciRevolution {
 		GameRegistry.registerItem(steelshovel, steelshovel.getUnlocalizedName());
 		GameRegistry.registerItem(steelsword, steelsword.getUnlocalizedName());
 
+		GameRegistry.registerItem(flintaxe, flintaxe.getUnlocalizedName());
+		GameRegistry.registerItem(flinthoe, flinthoe.getUnlocalizedName());
+		GameRegistry.registerItem(flintpick, flintpick.getUnlocalizedName());
+		GameRegistry.registerItem(flintsword, flintsword.getUnlocalizedName());
+
 		//Replace
 
 		GameRegistry.addSmelting(ore_copperblock, new ItemStack(copperingot), 0.6f);
@@ -502,6 +529,12 @@ public class SciRevolution {
 		GameRegistry.addShapedRecipe(new ItemStack(woodenpipe),
 		        new Object[] { "   ", "1 1", "111", '1', Blocks.planks });
 		GameRegistry.addShapedRecipe(new ItemStack(brass_tank), new Object[] { " 1 ", "1 1", " 1 ", '1', brass_plate });
+		GameRegistry.addShapedRecipe(new ItemStack(se), new Object[] { "1 2", "345", "332", '1', brass_tank, '2',
+		        ironplate, '3', insulationstone, '4', bronze_ingot, '5', Items.iron_ingot });
+		GameRegistry.addShapedRecipe(new ItemStack(fm),
+		        new Object[] { "121", "121", "1 1", '1', ironplate, '2', Items.iron_ingot });
+		GameRegistry.addShapedRecipe(new ItemStack(ef),
+		        new Object[] { " 11", "124", "333", '1', Items.iron_ingot, '2', ironshellblock, '3', coil, '4', gb });
 
 		RecipeSorter.register("scirev:shaped", AdvRecipe.class, RecipeSorter.Category.SHAPED,
 		        "after:minecraft:shapeless");
@@ -524,6 +557,18 @@ public class SciRevolution {
 		        new ItemStack(cp, 1, OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(alcable, 3), alplate,
 		        new ItemStack(cp, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(magnet, 2), magnet,
+		        Items.iron_ingot);
+
+		//Flint Tools
+		GameRegistry.addShapedRecipe(new ItemStack(flintaxe),
+		        new Object[] { "#", "*", '#', Items.flint, '*', Items.stick });
+		GameRegistry.addShapedRecipe(new ItemStack(flintpick),
+		        new Object[] { "##", "#*", '#', Items.flint, '*', Items.stick });
+		GameRegistry.addShapedRecipe(new ItemStack(flintsword),
+		        new Object[] { " #", "#*", '#', Items.flint, '*', Items.stick });
+		GameRegistry.addShapedRecipe(new ItemStack(flinthoe),
+		        new Object[] { "##", "*", "*", '#', Items.flint, '*', Items.stick });
 
 		GameRegistry.registerTileEntity(GeneratorEntity.class, "GeneratorTileEntity");
 		GameRegistry.registerTileEntity(MaceratorTileEntity.class, "MaceratorTileEntity");
@@ -543,6 +588,8 @@ public class SciRevolution {
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 		MinecraftForge.EVENT_BUS.register(new EventHandlers());
 
+		Replace.replaceBlock(Blocks.leaves, leaves, new ItemBlock(leaves), false);
+		Replace.replaceBlock(Blocks.leaves2, leaves2, new ItemBlock(leaves2), false);
 		Replace.replaceBlock(Blocks.anvil, anvil, new ItemBlock(anvil), false);
 		Replace.replaceItem(Items.bowl, itembowl, false);
 		//GameRegistry.addSubstitutionAlias("minecraft:anvil", Type.BLOCK, SciRevolution.anvil);
@@ -565,6 +612,23 @@ public class SciRevolution {
 		removeCrafting(Blocks.iron_block);
 		removeCrafting(new ItemStack(Items.iron_ingot, 9));
 		removeCrafting(new ItemStack(Items.furnace_minecart));
+		removeCrafting(new ItemStack(Items.iron_pickaxe));
+		removeCrafting(new ItemStack(Items.iron_sword));
+		removeCrafting(new ItemStack(Items.iron_axe));
+		removeCrafting(new ItemStack(Items.iron_hoe));
+		removeCrafting(new ItemStack(Items.iron_shovel));
+		removeCrafting(new ItemStack(Items.wooden_pickaxe));
+		removeCrafting(new ItemStack(Items.wooden_sword));
+		removeCrafting(new ItemStack(Items.wooden_axe));
+		removeCrafting(new ItemStack(Items.wooden_hoe));
+		removeCrafting(new ItemStack(Items.wooden_shovel));
+
+		//Special Ange
+		removeCrafting(new ItemStack(Items.bowl));
+		GameRegistry.addShapedRecipe(new ItemStack(itembowl, 4), new Object[] { "1 1", " 1 ", '1', Blocks.planks });
+		removeCrafting(Blocks.anvil);
+		GameRegistry.addShapedRecipe(new ItemStack(anvil),
+		        new Object[] { "111", " 2 ", "222", '1', Blocks.iron_block, '2', Items.iron_ingot });
 		//removeCrafting(Blocks.anvil);
 		//removeCrafting(new ItemStack(Items.bowl));
 
@@ -577,6 +641,7 @@ public class SciRevolution {
 		BlastFurnaceRecipe.registerRecipe();
 		ExtrusionerCraftingRecipe.registerRecipe();
 		ForgeMachineCraftingRecipe.registerRecipe();
+		VanillaRecipe.registRecipe();
 
 		// Entity
 

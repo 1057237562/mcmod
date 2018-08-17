@@ -35,6 +35,8 @@ public class ExtrusionerCraftingRecipe {
 		        new Object[] { new ItemStack(SciRevolution.alplate) }));
 		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.ironshell, 2),
 		        new Object[] { new ItemStack(SciRevolution.ironplate) }));
+		addRecipe(new AdvShapelessRecipe(new ItemStack(SciRevolution.steelplate),
+		        new Object[] { new ItemStack(SciRevolution.steel_ingot) }));
 	}
 
 	public static ItemStack getOutput(ItemStack item) {

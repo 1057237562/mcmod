@@ -25,7 +25,7 @@ public class GeneralShovel extends ItemSpade {
 
 	public GeneralShovel registerCraftingReceipe(Item material) {
 		GameRegistry.addShapedRecipe(new ItemStack(this),
-		        new Object[] { " # ", " * ", " * ", '#', material, '*', Items.stick });
+		        new Object[] { "#", "*", "*", '#', material, '*', Items.stick });
 		return this;
 	}
 }
